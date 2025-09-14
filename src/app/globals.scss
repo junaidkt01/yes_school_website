@@ -5,22 +5,29 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Gilroy";
+  font-family: "Gilroy-Medium";
   src: url("../assets/fonts/gilroy-bold/Gilroy-Medium.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+}
+@font-face {
+  font-family: "Gilroy-Bold";
+  src: url("../assets/fonts/gilroy-bold/Gilroy-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: bold;
 }
 
 body {
   margin: 0;
   padding: 0;
 
-  font-family: "Gilroy", sans-serif;
+  font-family: "Gilroy-Medium", sans-serif;
   background-color: #ffffff;
 }
 
 h1,
 h2,
+h3,
 p {
   margin: 0;
 }
