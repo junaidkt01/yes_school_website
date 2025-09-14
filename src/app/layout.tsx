@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.scss";
 import Header from "@/components/layout/Header";
+import "@/styles/mixins.scss"
+
+{/* <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet"></link> */}
 
 export const metadata: Metadata = {
   title: "My Website | Fast & SEO Friendly",

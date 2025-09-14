@@ -1,6 +1,5 @@
 "use client";
 import React from 'react'
-import "@/styles/mixins.scss"
 
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
@@ -10,7 +9,7 @@ const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/services", label: "Services" },
-    { href: "/contact", label: "Contact" },
+    { href: "/contact", label: "Contact Us" },
 ];
 
 const Header = () => {
@@ -28,7 +27,7 @@ const Header = () => {
                         <li key={link.href}>
                             <Link
                                 href={link.href}
-                                className={`${pathname === link.href}`} >
+                                className={`nav_link ${pathname === link.href} ${link.href.split("/")[1]}`} >
                                 {link.label}
                             </Link>
                         </li>
