@@ -10,7 +10,7 @@ export default async function Home() {
         <div className="count_section" >
           count
         </div>
-        <div className="mission_visions" >
+        {/* <div className="mission_visions" >
           <div className="mission_vision" >
             <h2>Vision</h2>
             <p>The foundation's vision is for "A vibrant, excellent and peaceful Society". It aims to "mould a generation respecting human values and traditions with progressive attitude, to the challenges of life so they can contribute a lot to build a developed nation".</p>
@@ -18,6 +18,26 @@ export default async function Home() {
           <div className="mission_vision" >
             <h2>Mission</h2>
             <p>The mission is the "Establishment of educational institutions throughout the nation to achieve the vision". The goal is to bring children "who are ruined and introverted even with grand abilities, to schools and nurture them as a great wealth for the society and country".</p>
+          </div>
+        </div> */}
+        <div className="mission_visions">
+          <div className="mission_vision">
+            <h2>Vision</h2>
+            <p>
+              The foundation&apos;s vision is for &quot;A vibrant, excellent and peaceful
+              Society&quot;. It aims to &quot;mould a generation respecting human values and
+              traditions with progressive attitude, to the challenges of life so they can
+              contribute a lot to build a developed nation&quot;.
+            </p>
+          </div>
+          <div className="mission_vision">
+            <h2>Mission</h2>
+            <p>
+              The mission is the &quot;Establishment of educational institutions throughout
+              the nation to achieve the vision&quot;. The goal is to bring children &quot;who are
+              ruined and introverted even with grand abilities, to schools and nurture them
+              as a great wealth for the society and country&quot;.
+            </p>
           </div>
         </div>
       </div>
