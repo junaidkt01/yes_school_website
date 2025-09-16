@@ -1,0 +1,78 @@
+// FounderMessage.tsx
+.found_message_section {
+  color: white;
+  margin: 80px;
+  padding-left: 76px;
+  padding-right: 76px;
+  background-color: #a5874c;
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+  gap: 100px;
+
+  .founder_details {
+    position: relative;
+    bottom: 92px;
+
+    .founder_img {
+      width: 100%;
+      margin-bottom: 25px;
+      img {
+        width: 100%;
+      }
+    }
+
+    .founder_details_text {
+      text-wrap: nowrap;
+
+      .founder_name {
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 110%;
+        letter-spacing: 0%;
+        text-align: justify;
+      }
+      .position {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 110%;
+        letter-spacing: 0%;
+        text-align: justify;
+      }
+    }
+  }
+
+  .message_box {
+    h2 {
+      // font-family: Funnel Display;
+      font-weight: 500;
+      font-size: 36px;
+      line-height: 100%;
+      letter-spacing: 0%;
+
+      margin-bottom: 30px;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      p {
+        //   font-family: Gilroy-Regular;
+        font-weight: 400;
+        font-style: ☞;
+        font-size: 22px;
+        line-height: 110%;
+        letter-spacing: 0%;
+        text-align: justify;
+      }
+    }
+  }
+
+  position: relative;
+  .qoutes_icon {
+    position: absolute;
+    bottom: 0;
+    right: 113px;
+  }
+}

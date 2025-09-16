@@ -8,7 +8,7 @@ const MissionVisionWrapper = ({ children }: { children: any }) => {
     return (
         <div
             ref={elementRef}
-            className={`mission_vision_section ${isVisible ? "visible" : ""}`}
+               className={`mission_vision_section ${isVisible ? "visible" : ""}`}
         >
             {children}
         </div>

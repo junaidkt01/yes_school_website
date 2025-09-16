@@ -2,6 +2,7 @@ import HomeBanner from "@/components/layout/HomeBanner";
 import StatCard from "@/components/ui/StatCard";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 import MissionVisionWrapper from "@/components/layout/MissionVisionWrapper";
+import FoundersMessage from "@/components/layout/FoundersMessage";
 
 export default async function Home() {
   return (
@@ -12,7 +13,8 @@ export default async function Home() {
         ref={elementRef}
         className={`mission_vision_section ${isVisible ? "visible" : ""}`}
       > */}
-      <MissionVisionWrapper>
+      <div className="mission_vision_section visible">
+        {/* <MissionVisionWrapper> */}
         <div className="count_section" >
           <div className="stat_card" >
             <StatCard icon={<svg width="48" height="48" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -50,7 +52,9 @@ export default async function Home() {
             </p>
           </div>
         </div>
-      </MissionVisionWrapper>
+        {/* </MissionVisionWrapper> */}
+      </div>
+      <FoundersMessage />
     </main>
   );
 }
