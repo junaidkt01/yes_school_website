@@ -11,7 +11,7 @@ const FoundersMessage = () => {
                 </div>
             </div>
             <div className="message_box" >
-                <h2>Founder's message</h2>
+                <h2>Founder&apos;s message</h2>
                 <div>
                     <p>Mere education is not the solution for contemporary India, nor for the recent world. It solves problems, but only when it is alloyed with human values. Therefore, value-based education is the best development any country can fearlessly invest in. It is also the best service anyone can find everlasting satisfaction in.</p>
                     <p>Still, villages of our proud India miss it. This is because India is beyond calculations. YES India Foundation stands for value-based education, to bring up the best leaders of the next generation</p>
