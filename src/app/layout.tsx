@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.scss";
 import Header from "@/components/layout/Header";
 import "@/styles/mixins.scss"
+import Footer from "@/components/layout/Footer";
 
 {/* <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="antialiased" suppressHydrationWarning>
         <Header />
         {children}
+        <Footer/>
       </body>
 
       {/* <body className="antialiased">{children}</body> */}

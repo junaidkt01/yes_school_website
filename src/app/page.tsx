@@ -1,8 +1,7 @@
 import HomeBanner from "@/components/layout/HomeBanner";
 import StatCard from "@/components/ui/StatCard";
-import { useScrollReveal } from "../../hooks/useScrollReveal";
-import MissionVisionWrapper from "@/components/layout/MissionVisionWrapper";
 import FoundersMessage from "@/components/layout/FoundersMessage";
+import ExploreTeam from "@/components/layout/ExploreTeam";
 
 export default async function Home() {
   return (
@@ -13,7 +12,8 @@ export default async function Home() {
         ref={elementRef}
         className={`mission_vision_section ${isVisible ? "visible" : ""}`}
       > */}
-      <div className="mission_vision_section visible">
+      <div className="wrapper_section">
+     <div className="mission_vision_section visible">
         {/* <MissionVisionWrapper> */}
         <div className="count_section" >
           <div className="stat_card" >
@@ -54,7 +54,10 @@ export default async function Home() {
         </div>
         {/* </MissionVisionWrapper> */}
       </div>
+      </div>
+ 
       <FoundersMessage />
+      <ExploreTeam/>
     </main>
   );
 }
