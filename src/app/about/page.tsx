@@ -1,3 +1,4 @@
+import CardGrid from "@/components/ui/CardGrid";
 import Carousal from "@/components/ui/Carousal";
 
 const about = () => {
@@ -45,6 +46,7 @@ const about = () => {
 
         </div>
         <Carousal/>
+        <CardGrid/>
       </section>
     </>
   );
