@@ -90,7 +90,10 @@
   align-items: center;
   border-radius: 30px;
   gap: 100px;
-
+ @media (min-width:769px) and (max-width:991px) {
+  padding:80px 0px 80px 20px;
+    gap: 50px;
+ }
   .founder_details_text {
     text-align: center;
 
@@ -161,6 +164,9 @@ text-align: justify;
 .explore_team_container {
   margin-top: 60px;
 
+  @media (max-width:768px) {
+   display: none;
+  }
   .explore_team_contents_wrapper {
     // height: 468px;
     display: flex;
