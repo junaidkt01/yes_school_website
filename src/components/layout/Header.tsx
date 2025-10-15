@@ -6,9 +6,10 @@ import Image from "next/image";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/services", label: "Our Work" },
-  { href: "/impact", label: "Our Impact" },
+  { href: "/about", label: "About Us" },
+    { href: "/institutions", label: "Institutions" },
+  { href: "/academic", label: "Academic" },
+  { href: "/charity", label: "Charity" },
   { href: "/Gallery", label: "Gallery" },
   { href: "/join", label: "Join Us" },
 ];
