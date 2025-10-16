@@ -1,5 +1,7 @@
 /* 1. @use (and @forward) FIRST */
 @use "../styles/about" as about;
+@use "../styles/academic" as academic;
+@use "../styles/institutions" as institutions; 
 @use "../styles/utilities" as utilities;
 
 /* 2. Old @import (if you still need them) */
