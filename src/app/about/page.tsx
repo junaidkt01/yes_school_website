@@ -82,9 +82,9 @@ const about = () => {
       <section className="administrative_section wrapper_section">
         <div className="administrative_container">
           <div className="administrative_contents">
-            <div style={{height:"446px", width:"593px",background: "#D9D9D9"}}>
-
-            </div>
+            <div
+              style={{ height: "446px", width: "593px", background: "#D9D9D9" }}
+            ></div>
             <div>
               <h2>The Administrative Hierarchy</h2>
               <p>
@@ -99,37 +99,35 @@ const about = () => {
             </div>
           </div>
 
-<div className="administrative_positions_wrapper">
-  <div className="position level1">Managing Director</div>
+          <div className="administrative_positions_wrapper">
+            <div className="position level1">Managing Director</div>
 
-  <div className="group">
-    <div className="group-title green">Directorate</div>
-    <div className="sub-item">Administration</div>
-    <div className="sub-item">Finance</div>
-    <div className="sub-item">Academic</div>
-    <div className="sub-item">Human Resource</div>
-    <div className="sub-item">Public Relation</div>
-  </div>
+            <div className="group">
+              <div className="group-title green">Directorate</div>
+              <div className="sub-item">Administration</div>
+              <div className="sub-item">Finance</div>
+              <div className="sub-item">Academic</div>
+              <div className="sub-item">Human Resource</div>
+              <div className="sub-item">Public Relation</div>
+            </div>
 
-  <div className="position yellow">Regional Manager</div>
-  <div className="position orange">Zonal Manager</div>
+            <div className="position yellow">Regional Manager</div>
+            <div className="position orange">Zonal Manager</div>
 
-  <div className="group">
-    <div className="sub-item">Zonal CO Human Resource</div>
-    <div className="sub-item">Zonal CO ADMIN</div>
-    <div className="sub-item">Zonal CO Finance</div>
-    <div className="sub-item">Zonal CO Academic</div>
-    <div className="sub-item">Zonal CO Public Relation</div>
-  </div>
+            <div className="group">
+              <div className="sub-item">Zonal CO Human Resource</div>
+              <div className="sub-item">Zonal CO ADMIN</div>
+              <div className="sub-item">Zonal CO Finance</div>
+              <div className="sub-item">Zonal CO Academic</div>
+              <div className="sub-item">Zonal CO Public Relation</div>
+            </div>
 
-  <div className="position green">Principal</div>
-  <div className="position orange-light">Academic Coordinator</div>
-  <div className="position peach">Teachers</div>
-</div>
-
+            <div className="position green">Principal</div>
+            <div className="position orange-light">Academic Coordinator</div>
+            <div className="position peach">Teachers</div>
+          </div>
         </div>
       </section>
-
     </>
   );
 };
