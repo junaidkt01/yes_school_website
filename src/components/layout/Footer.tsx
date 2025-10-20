@@ -8,10 +8,9 @@ const Footer = () => {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About Us" },
-    { href: "/services", label: "Our Work" },
-    { href: "/impact", label: "Our Impact" },
+    { href: "/academic", label: "Academic" },
+    { href: "/charity", label: "Charity" },
     { href: "/gallery", label: "Gallery" },
-    { href: "/join", label: "Join Us" },
     { href: "/alumni", label: "Alumni" },
   ];
 

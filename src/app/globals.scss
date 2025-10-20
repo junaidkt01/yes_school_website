@@ -3,6 +3,8 @@
 @use "../styles/academic" as academic;
 @use "../styles/institutions" as institutions; 
 @use "../styles/utilities" as utilities;
+@use "../styles/states" as states;
+@use "../styles/gallery" as gallery;
 
 /* 2. Old @import (if you still need them) */
 @use "../styles/Footer" as footer; // ideally also migrate to @use
