@@ -185,7 +185,7 @@
   height: calc(100dvh - 78px);
   padding: 0px 48px;
 
-  @media (max-width: 1080px) {
+  @media (max-width: 768px) {
     height: 100%;
     padding: 0 24px;
   }
@@ -224,9 +224,9 @@
     left: 48px;
     transform: translateY(-50%);
     color: #fff;
-    font-size: 2.4rem;
-    font-weight: 700;
-    line-height: 1.3;
+       font-size: clamp(2rem, 3vw, 3rem);
+        font-weight: 700;
+        line-height: 1.3;
     z-index: 2;
     max-width: 520px;
 
@@ -254,33 +254,21 @@ color: #ffffff;
 
   .prev_btn {
     left: 50px;
+    @media (max-width:1080px) {
+      left: 24px;
+    }
   }
 
   .next_btn {
     right: 50px;
+        @media (max-width:1080px) {
+      right: 24px;
+    }
   }
 
   /* --- Pagination Dots --- */
   .banner_pagination {
-    position: absolute;
-    bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 4;
-    display: flex;
-    gap: 8px;
-  }
-
-  .banner_pagination .swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
-    opacity: 1;
-    transition: all 0.3s ease;
-  }
-
-  .banner_pagination .swiper-pagination-bullet-active {
-    background: #fff;
-    transform: scale(1.3);
+display: none;
   }
 }
 

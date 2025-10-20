@@ -2,12 +2,12 @@
   position: relative;
   height: calc(100dvh - 78px);
   overflow: hidden;
-
+      padding: 0px 48px;
   .institutions_banner_wrapper {
     position: relative;
     height: 100%;
+  
 
-      padding: 0px 48px;
 
     .about_banner_image {
       width: 100%;
@@ -18,6 +18,7 @@
     }
 
     .institutions_banner_content {
+          background: #00000099;
       position: absolute;
       inset: 0;
       display: flex;
@@ -92,16 +93,48 @@ text-align: justify;
       }
 
       .campus_image_wrapper {
-        position: relative;
-        width: 100%;
-        height: 280px;
-        overflow: hidden;
-        border-radius: 12px;
-        background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+  transition: all 0.3s ease;
 
         @media (max-width: 768px) {
           height: 240px;
         }
+
+          .video_play_button {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.25);
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease;
+
+    .play_icon {
+      color: white;
+      filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.6));
+      transition: transform 0.3s ease;
+    }
+
+    &:hover .play_icon {
+      transform: scale(1.1);
+      color: #ffd700; // Gold tint for premium look
+            // color:#a5874c;
+    }
+  }
+
+  &:hover .video_play_button {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.45);
+  }
 
         .campus_image {
           width: 100%;
