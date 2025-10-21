@@ -53,7 +53,7 @@ const StatCard: React.FC<StatCardProps> = ({ icon, count, label, duration = 2000
     <div ref={ref} className="flex items-center gap-3 my-4">
       <div className="text-yellow-700 text-4xl">{icon}</div>
       <div>
-        <h3 className="text-[32px] font-bold">{displayedCount}+</h3>
+        <h2 className="text-[32px]">{displayedCount}+</h2>
         <p className="text-gray-600 text-[18px]">{label}</p>
       </div>
     </div>

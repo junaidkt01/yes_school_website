@@ -96,7 +96,30 @@
  }
   .founder_details_text {
     text-align: center;
+.founder_name{
+  color: var(--heading-color);
+  font-weight: 600;
+  text-wrap: nowrap;
+}
 
+.position{
+  color: var(--heading-color);
+  font-weight: 100;
+}
+  }
+
+  .message_box{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    h2 {
+      color: var(--heading-color);
+      
+    }
+    p {
+      color: var(--heading-color);
+      font-weight: 100;
+    }
   }
 }
 
@@ -108,8 +131,7 @@
   }
 }
 .found_message_section_mobile {
-  background: var(--YES-Brown, #a5874c);
-  color: #ffffff;
+  background: var(--body-bg-color);
   padding: 32px 26px 38px 26px;
   border-radius: 15px;
   display: flex;
@@ -126,32 +148,32 @@
    }
 
   .found_img_container h5{
+    color: var(--heading-color);
     padding-top: 22px;
-font-weight: 300;
+font-weight: 500;
 font-size: 18px;
 letter-spacing: 0%;
 text-align: justify;
   }
 
    .found_img_container p{
-font-weight: 400;
-font-size: 15px;
-letter-spacing: 0%;
+    color: var(--heading-color);
+    font-weight: 0;
+// font-weight: 400;
+// font-size: 15px;
+// letter-spacing: 0%;
 text-align: center;
    }
 
-   .founder_message_area h3{
+   .founder_message_area h2{
     padding-bottom: 6px;
-font-weight: 550;
+color: var(--heading-color);
 font-size: 24px;
 line-height: 100%;
 letter-spacing: 0%;
    }
    .founder_message_area p{
-font-weight: 200;
-font-size: 14px;
-line-height: 18px;
-letter-spacing: 0%;
+    color: var(--heading-color);
 text-align: justify;
 
    }
@@ -174,19 +196,9 @@ text-align: justify;
     // align-items: center;
     padding: 48px 55px;
 
-    h1 {
-      font-weight: 500;
-      font-size: 36px;
-      line-height: 100%;
-      letter-spacing: 0%;
-      // font-family: ;
-    }
+
 
     p {
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 25px;
-      letter-spacing: 0%;
       text-align: justify;
     }
   }

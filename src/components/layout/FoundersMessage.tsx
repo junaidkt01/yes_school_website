@@ -68,7 +68,7 @@ const FoundersMessage = () => {
         </div>
 
         <div className="founder_message_area">
-          <h3>Founder’s Message</h3>
+          <h2>Founder’s Message</h2>
           <p>
             Mere education is not the solution for contemporary India, nor for
             the recent world. It solves problems, but only when it is alloyed

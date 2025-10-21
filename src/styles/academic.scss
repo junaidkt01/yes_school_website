@@ -50,20 +50,21 @@
     padding: 0 2rem;
 
     h1 {
-      font-size: 2.8rem;
-      color: #101010;
+        font-family: var(--font-funnel-display);
+      color:var(--paragraph-color);
       font-weight: 600;
       margin-bottom: 0.5rem;
-    }
-
-    h2 {
-      font-size: 2.2rem;
-      font-weight: 600;
-      color: #111;
       span {
         color: #2a1b64; // YES INDIA purple tone
       }
     }
+
+    // h2 {
+    //   font-size: 2.2rem;
+    //   font-weight: 600;
+    //   color: #111;
+      
+    // }
 
     @media (max-width: 768px) {
       h1 {
