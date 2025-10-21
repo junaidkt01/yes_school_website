@@ -12,6 +12,7 @@ const navLinks = [
   { href: "/charity", label: "Charity" },
   { href: "/gallery", label: "Gallery" },
   { href: "/states", label: "States" },
+    { href: "/alumni", label: "Alumni" },
 ];
 
 const Header = () => {
