@@ -39,7 +39,7 @@ p {
 
 h1 {
   color: var(--primary-color);
-  font-family: "Gilroy-Medium", sans-serif;
+  font-family: var(--font-funnel-display);
   font-size: clamp(2rem, 3vw, 3rem);
   font-weight: 700;
   line-height: 1.2;

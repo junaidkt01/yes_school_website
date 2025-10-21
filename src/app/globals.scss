@@ -6,6 +6,7 @@
 @use "../styles/variables" as variables;
 @use "../styles/states" as states;
 @use "../styles/gallery" as gallery;
+@use "../styles/alumni" as alumni;
 
 /* 2. Old @import (if you still need them) */
 @use "../styles/Footer" as footer; // ideally also migrate to @use
