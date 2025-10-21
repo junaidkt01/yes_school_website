@@ -45,10 +45,11 @@ const academic = () => {
 
         {/* ====== Heading Section ====== */}
         <div className="banner_content">
-          <h1>Diverse Learning Paths:</h1>
-          <h2>
+
+          <h1>
+            Diverse Learning Paths: <br />
             Types & Grades of <span>YES INDIA</span> Institutes
-          </h2>
+          </h1>
         </div>
 
         {/* ====== Floating Icons ====== */}

@@ -4,10 +4,14 @@ import "./globals.scss";
 import Header from "@/components/layout/Header";
 import "@/styles/mixins.scss"
 import Footer from "@/components/layout/Footer";
+import { Funnel_Display } from "next/font/google";
 
-{/* <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet"></link> */}
+//  Import Google Font professionally
+const funnelDisplay = Funnel_Display({
+  subsets: ["latin"],
+  variable: "--font-funnel-display", // custom CSS variable
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "My Website | Fast & SEO Friendly",
@@ -29,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${funnelDisplay.variable}`}>
       <body className="antialiased" suppressHydrationWarning>
         <Header />
         {children}

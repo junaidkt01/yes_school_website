@@ -38,6 +38,7 @@ footer .footer_logo p {
   font-size: 14px;
   line-height: 1.6;
   opacity: 0.9;
+  color: var(--heading-color);
 }
 
 footer .footer_navlinks ul {
@@ -60,6 +61,12 @@ footer .footer_contact_container {
   flex-direction: column;
   gap: 20px;
   font-size: 14px;
+  color: var(--heading-color);
+}
+
+.location_container p {
+    color: var(--heading-color);
+    font-weight: 0;
 }
 
 footer .footer-socials ul {
@@ -129,6 +136,16 @@ footer .footer_copyright {
   margin-top: 20px;
   font-size: 14px;
   opacity: 0.8;
+}
+
+.footer_copyright p {
+  color: var(--heading-color);
+  font-weight: 0;
+  font-size: 14px;
+
+  @media (max-width:768px) {
+    font-size: 12px;
+  }
 }
 
 /* ================== RESPONSIVE ================== */

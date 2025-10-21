@@ -9,7 +9,7 @@ const ExploreTeam = () => {
           <div
             style={{ display: "flex", flexDirection: "column", gap: "47px" }}
           >
-            <h1>The Team is Here</h1>
+            <h2>The Team is Here</h2>
             <p>
               In this nationwide educational network, all of them are working as
               a single team but in a hierarchy - serving in different posts like
