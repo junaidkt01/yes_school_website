@@ -24,13 +24,13 @@ const FoundersMessage = () => {
               with human values. Therefore, value-based education is the best
               development any country can fearlessly invest in. It is also the
               best service anyone can find everlasting satisfaction in.
-            </p>
+            </p> <br />
             <p>
               Still, villages of our proud India miss it. This is because India
               is beyond calculations. YES India Foundation stands for
               value-based education, to bring up the best leaders of the next
               generation
-            </p>
+            </p> <br />
             <p>Inviting you too to join us.</p>
           </div>
         </div>

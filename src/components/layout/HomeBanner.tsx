@@ -38,11 +38,15 @@ const HomeBanner = () => {
       text: "A Child Without Education is Like a Bird Without Wings",
     },
     {
-      image: "/home_banner.png",
+      image: "/home_bg_banner2.jpg",
       text: "Empowering the Next Generation Through Knowledge",
     },
     {
-      image: "/home_banner.png",
+      image: "/home_bg_banner3.jpg",
+      text: "Education Opens the Door to Freedom and Opportunity",
+    },
+       {
+      image: "/home_bg_banner4.jpg",
       text: "Education Opens the Door to Freedom and Opportunity",
     },
   ];

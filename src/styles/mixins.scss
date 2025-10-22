@@ -183,7 +183,7 @@
  .home_banner {
   position: relative;
   height: calc(100dvh - 78px);
-  padding: 0px 48px;
+      padding: 40px 48px 0px 48px;
 
   @media (max-width: 768px) {
     height: 100%;
@@ -282,8 +282,7 @@ display: none;
 
   // padding: 0 80px;
 
-  position: relative;
-  top: -100px;
+
   opacity: 0;
   transition: all 0.8s ease-in-out;
 
@@ -295,6 +294,9 @@ display: none;
   &.visible {
     top: 0;
     opacity: 1;
+      position: relative;
+  top: -80px;
+  z-index: 1;
   }
 
   .count_section {
@@ -305,7 +307,7 @@ display: none;
 
     .stat_card {
       display: grid;
-      gap: 30px;
+      gap: 20px;
 
       @media (max-width: 1080px) {
         gap: 0;

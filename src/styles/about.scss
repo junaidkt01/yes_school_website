@@ -7,7 +7,8 @@
     position: relative;
     height: 100%;
     
-      padding: 0px 48px;
+      // padding: 0px 48px;
+      padding: 40px 48px 20px 48px;
 
     .about_banner_image {
       width: 100%;
@@ -34,7 +35,7 @@
 
 
 .about_contents_wrapper{
-    margin: 78px 0px;
+    margin: 40px 0px;
     span{
         color: var(--YES-Blue, #2A1B63);
         font-weight: bolder;
@@ -55,13 +56,16 @@ justify-content: center;
 
   > div {
     flex: 2;
- padding-left: 60px;  
+padding:0px 60px;  
 
  @media (max-width:768px) {
   padding-left: 0;
  }
     &:first-child {
       flex: 1;
+      flex-direction: column;
+      display: flex;
+      align-items: center;
       h1{
         padding-bottom: 5px;
 
@@ -76,7 +80,11 @@ letter-spacing: 0%;
       }
     }
     &:last-child {
-      flex: 1;
+       display: flex
+;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
 
       p{
         font-weight: 400;
@@ -305,7 +313,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 gap: 100px;
-padding: 0 60px;
+padding:40px 60px 80px 60px;
 
   .administrative_contents{
   display: flex;

@@ -86,7 +86,7 @@ const timelineData = [
 
       <section className="milestone_section wrapper_section">
         <div>
-          <h1>Milestones of Growth</h1>
+          <h1>Milestones <br /> of Growth</h1>
           <p>Yearly Progress Since 2007</p>
         </div>
         <div>
@@ -180,7 +180,7 @@ const timelineData = [
               style={{ height: "446px", width: "593px", background: "#D9D9D9" }}
             ></div>
             <div>
-              <h2>The Administrative Hierarchy</h2>
+              <h2>The Administrative <br /> Hierarchy</h2>
               <p>
                 An effective and cohesive administrative hierarchy forms the
                 backbone of YES India Foundation. From top-level directors to
