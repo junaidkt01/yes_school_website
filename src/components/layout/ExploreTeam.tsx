@@ -24,7 +24,7 @@ const ExploreTeam = () => {
          <p>
   members; individually known as &apos;Yesian&apos; and collectively &apos;YES
   Team&apos; captained by a visionary ardent Founder Mr. Shaukath
-  Bukhari. Actually, total team members are 875. Among them, some
+  Bukhari. <br /> Actually, total team members are 875. Among them, some
   faces are introduced here specially, considering their sacrifice
   to work out of their birth state to ensure their service
   around-the-clock. They are ordered here based on the seniority in
@@ -33,7 +33,7 @@ const ExploreTeam = () => {
 </p>
           </div>
         </div>
-        <div className="explore_team_img_wrpper">
+        <div className="explore_team_img_wrapper">
           <Image
             src="/team_photo.png"
             alt="team-photo"
@@ -41,8 +41,15 @@ const ExploreTeam = () => {
             height={540}
             priority
           />
-
+        <div className="explore_btn">
+          <button><p>Explore Our Team</p> <svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M26 12L1.5 12M26 12L15.5 22.5M26 12L15.5 1.5" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+</svg>
+</button>
         </div>
+        </div>
+
+
       </div>
     </div>
   );

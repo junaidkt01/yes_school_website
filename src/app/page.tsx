@@ -59,7 +59,7 @@ export default async function Home() {
                     />
                   </svg>
                 }
-                count={8}
+                count={9}
                 label="States"
               />
               <StatCard

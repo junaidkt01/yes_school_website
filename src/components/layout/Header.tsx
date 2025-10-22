@@ -9,10 +9,9 @@ const navLinks = [
   { href: "/about", label: "About Us" },
     { href: "/institutions", label: "Institutions" },
   { href: "/academic", label: "Academic" },
-  { href: "/charity", label: "Charity" },
+  { href: "/yesCare", label: "Yes Care" },
   { href: "/gallery", label: "Gallery" },
   { href: "/states", label: "States" },
-    { href: "/alumni", label: "Alumni" },
 ];
 
 const Header = () => {
