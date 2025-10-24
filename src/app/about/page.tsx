@@ -1,31 +1,25 @@
 import CardGrid from "@/components/ui/CardGrid";
 import Carousal from "@/components/ui/Carousal";
+import { IndiaMap } from "@/components/ui/IndiaMap";
 import MarqueeCarousal from "@/components/ui/MarqueeCarousal";
 import Image from "next/image";
 
 const about = () => {
-const timelineData = [
-    { year: "2007", image: "/timeline/2007.jpg" },
-    { year: "2008", image: "/timeline/2008.jpg" },
-    { year: "2009", image: "/timeline/2009.jpg" },
-    { year: "2010", image: "/timeline/2010.jpg" },
-    // Add more years as needed
-  ];
 
 
-    const institutions = [
+  const institutions = [
     {
       title: "Yaseen English School",
-      image: "/yaseen-school.png" // Update with your actual image path
+      image: "/yaseen-school.png", // Update with your actual image path
     },
     {
       title: "YES India Public School",
-      image: "/yes-public-school.png"
+      image: "/yes-public-school.png",
     },
     {
       title: "EC Yes Pre-life Schools",
-      image: "/ec-yes-prelife.png"
-    }
+      image: "/ec-yes-prelife.png",
+    },
   ];
 
   return (
@@ -86,7 +80,9 @@ const timelineData = [
 
       <section className="milestone_section wrapper_section">
         <div>
-          <h1>Milestones <br /> of Growth</h1>
+          <h1>
+            Milestones <br /> of Growth
+          </h1>
           <p>Yearly Progress Since 2007</p>
         </div>
         <div>
@@ -103,52 +99,7 @@ const timelineData = [
         </div>
       </section>
 
-<section className="year_achievement_container">
-        <div className="timeline_wrapper">
-          <div className="timeline_line"></div>
-          <div className="year_cards_wrapper">
-            {timelineData.map((item, index) => (
-              <div key={item.year} className="timeline_item">
-                <div className="timeline_dot"></div>
-                <div className="year_label">{item.year}</div>
-                <div className="year_card">
-                  <Image
-                    src={item.image}
-                    alt={`Year ${item.year}`}
-                    width={280}
-                    height={280}
-                    className="year_image"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* States of Operation Section */}
-      <section className="wrapper_section">
-        <div className="state_operation_section">
-          <div>
-            <h1>YES INDIA States <br /> of Operations:</h1>
-            <p>Expanding Horizons</p>
-          </div>
-
-          <div className="india_map_container">
-            <div className="map_wrapper">
-              <Image
-                src="/india_map.png"
-                alt="YES India States of Operation"
-                width={600}
-                height={700}
-                className="india_map"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-<section className="institutions_types_container">
+      <section className="institutions_types_container">
         <div className="institutions_types_wrapper">
           <h1 className="institutions_heading">
             Types of YES <br /> Institutions
@@ -173,6 +124,25 @@ const timelineData = [
         </div>
       </section>
 
+      {/* States of Operation Section */}
+      <section className="wrapper_section">
+        <div className="state_operation_section">
+          <div>
+            <h1>
+              YES INDIA States <br /> of Operations:
+            </h1>
+            <p>Expanding Horizons</p>
+          </div>
+
+          <div className="india_map_container">
+            <div className="map_wrapper" style={{ width: "100%" }}>
+              <IndiaMap />
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       <section className="administrative_section wrapper_section">
         <div className="administrative_container">
           <div className="administrative_contents">
@@ -180,7 +150,9 @@ const timelineData = [
               style={{ height: "446px", width: "593px", background: "#D9D9D9" }}
             ></div>
             <div>
-              <h2>The Administrative <br /> Hierarchy</h2>
+              <h2>
+                The Administrative <br /> Hierarchy
+              </h2>
               <p>
                 An effective and cohesive administrative hierarchy forms the
                 backbone of YES India Foundation. From top-level directors to
@@ -222,10 +194,11 @@ const timelineData = [
           </div>
         </div>
       </section>
-
-
     </>
   );
 };
 
 export default about;
+
+
+

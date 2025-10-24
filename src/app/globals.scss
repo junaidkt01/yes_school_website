@@ -7,6 +7,7 @@
 @use "../styles/states" as states;
 @use "../styles/gallery" as gallery;
 @use "../styles/alumni" as alumni;
+@use "../styles/charity" as charity;
 
 /* 2. Old @import (if you still need them) */
 @use "../styles/Footer" as footer; // ideally also migrate to @use

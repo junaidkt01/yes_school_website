@@ -11,9 +11,10 @@ const Footer = () => {
     { href: "/academic", label: "Academic" },
     { href: "/yesCare", label: "Yes Care" },
     { href: "/gallery", label: "Gallery" },
-        { href: "/joinUs", label: "Join Us" },
+     { href: "/gpt", label: "Yes GPP" },
     { href: "/alumni", label: "Alumni" },
-        { href: "/gpt", label: "Yes GPT" },
+            { href: "/feedback", label: "Feedback" },
+       
   ];
 
   return (
@@ -33,10 +34,7 @@ const Footer = () => {
               />
             </Link>
             <p>
-              Yes India empowers minds through <br />
-              learning, lifts lives with care, builds <br />
-              hope with action, and plants seeds <br />
-              of change where it matters most.
+              YES India Makes an excellent India
             </p>
           </div>
 

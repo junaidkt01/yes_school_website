@@ -1,7 +1,7 @@
 // header_section
 .header_section {
   z-index: 99;
-  padding: 0 186px;
+  padding: 50px 186px;
   height: 78px;
   background-color: #ffffff;
 
@@ -136,48 +136,6 @@
 }
 }
 
-//////////////////////////////
-
-// .home_banner {
-//   height: calc(100dvh - 78px);
-//   // padding: 30px;
-
-//   @media (max-width: 1080px) {
-//     height: 100%;
-//   }
-
-//   .home_banner_content {
-//     background: url("/home_banner.png");
-//     background-size: cover;
-
-//     height: calc(100% - (78px - 60px));
-//     border-radius: 30px;
-//     // height: 100%;
-//     margin: 0 30px;
-
-//     display: flex;
-//     align-items: center;
-//     padding: 0 132px;
-
-//     @media (max-width: 1080px) {
-//       height: 100%;
-//     }
-//     h1 {
-//       // font-family: Funnel Display;
-//       font-weight: 500;
-//       font-size: 75px;
-//       line-height: 78px;
-//       letter-spacing: 0%;
-//       color: #2a1b63;
-
-//       @media (max-width: 1080px) {
-//         font-size: 30px;
-//         line-height: 35px;
-//         text-align: center;
-//       }
-//     }
-//   }
-// }
 
 
  .home_banner {

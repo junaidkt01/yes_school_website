@@ -9,7 +9,7 @@ const navLinks = [
   { href: "/about", label: "About Us" },
     { href: "/institutions", label: "Institutions" },
   { href: "/academic", label: "Academic" },
-  { href: "/yesCare", label: "Yes Care" },
+  { href: "/yes-care", label: "Yes Care" },
   { href: "/gallery", label: "Gallery" },
   { href: "/states", label: "States" },
 ];

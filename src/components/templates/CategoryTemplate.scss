@@ -1,0 +1,32 @@
+.category_banner {
+  position: relative;
+  height: calc(100dvh - 78px);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category_cards {
+  padding: 60px 20px;
+  
+  .cards_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  @media (min-width: 768px) {
+    .cards_grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .cards_grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
