@@ -1,3 +1,4 @@
+import AlumniLogin from "@/components/templates/AlumniLogin";
 import { alumniData } from "@/utils/alumniData";
 import React from "react";
 
@@ -58,9 +59,9 @@ const page = () => {
               </button>
             </div>
             <p>
-              The true measure of success for <span>YES India Foundation</span> lies
-              in the achievements of its alumni. Our graduates have gone on to
-              excel in various fields, including civil services, higher
+              The true measure of success for <span>YES India Foundation</span>{" "}
+              lies in the achievements of its alumni. Our graduates have gone on
+              to excel in various fields, including civil services, higher
               education, entrepreneurship and community service. The alumni
               network is a growing community of role models who carry forward
               the values and education they received, making a positive impact
@@ -71,7 +72,7 @@ const page = () => {
         </div>
       </section>
 
-<section className="wrapper_section">
+      <section className="wrapper_section">
         <div className="alumni_grid_section">
           <div className="alumni_grid">
             {alumniData.map((alumni, index) => (
@@ -83,12 +84,32 @@ const page = () => {
                 <div className="alumni_info">
                   <h3>{alumni.name}</h3>
                   <p className="position">{alumni.position}</p>
-                  {alumni.department && <p className="department">{alumni.department}</p>}
+                  {alumni.department && (
+                    <p className="department">{alumni.department}</p>
+                  )}
                 </div>
               </div>
             ))}
           </div>
         </div>
+      </section>
+
+      <section className="alumni_portal_section">
+        <div className="alumni_portal_container">
+<AlumniLogin/>
+        </div>
+      </section>
+
+      <section className=" wrapper_section">
+            <div className="product_achievement_container">
+            <div>
+              celebrate success
+            </div>
+
+            <div>
+              state
+            </div>
+            </div>
       </section>
     </>
   );

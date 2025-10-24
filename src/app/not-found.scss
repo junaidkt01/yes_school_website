@@ -1,0 +1,129 @@
+// app/not-found.scss
+
+// Variables
+$color-primary: #A5874C;
+$color-primary-hover: #A5874C;
+$color-text-dark: #2A1B63;
+$color-bg-light: #f9fafb;
+$color-bg-lighter: #f3f4f6;
+$color-404: #e5e7eb;
+$shadow-sm: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+$transition-smooth: all 0.3s ease;
+
+// Wrapper Section
+.wrapper-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+// Error Page Wrapper
+.error-page-wrapper {
+  text-align: center;
+  width: 100%;
+}
+
+// Error Content Container
+.error-content {
+  position: relative;
+  display: inline-block;
+}
+
+// Large 404 Background Number
+.error-number {
+  font-size: 350px;
+  font-weight: 700;
+  color: $color-404;
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  
+  @media (max-width: 1024px) {
+    font-size: 280px;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 200px;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 150px;
+  }
+}
+
+// Content Overlay
+.error-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+// Error Title
+.error-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: $color-text-dark;
+  margin: 0;
+  padding: 0 1rem;
+  
+  @media (max-width: 768px) {
+    font-size: 1.875rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
+}
+
+// Home Button
+.home-button {
+  background-color: $color-primary;
+  color: white;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: $shadow-sm;
+  transition: $transition-smooth;
+  font-size: 1rem;
+  
+  &:hover {
+    background-color: $color-primary-hover;
+    box-shadow: $shadow-lg;
+    transform: scale(1.05);
+  }
+  
+  &:active {
+    transform: scale(0.98);
+  }
+  
+  &:focus {
+    outline: none;
+    box-shadow: $shadow-lg, 0 0 0 3px rgba(217, 119, 6, 0.3);
+  }
+}
+
+// Arrow Icon
+.arrow-icon {
+  height: 1.25rem;
+  width: 1.25rem;
+  transition: transform 0.3s ease;
+  
+  .home-button:hover & {
+    transform: translateX(4px);
+  }
+}
