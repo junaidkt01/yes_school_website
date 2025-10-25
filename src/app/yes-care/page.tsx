@@ -1,12 +1,8 @@
-import { yesInfoCardData } from "@/utils/cardData";
-import Image from "next/image";
+
 import React from "react";
 
 const page = () => {
-     // Filter only the cards you want
-  const filteredCards = yesInfoCardData.filter(
-    (card) => card.title === "Educational" || card.title === "Humane"
-  );
+
   return (
     <>
       <section className="charity_banner_container">
@@ -115,7 +111,7 @@ const page = () => {
         </div>
       </section>
 
-   <section className="wrapper_section">
+   {/* <section className="wrapper_section">
         <div className="card_container">
           {filteredCards.map((item, i) => (
             <div key={i} className="card_wrapper">
@@ -164,7 +160,7 @@ const page = () => {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
     </>
   );
 };

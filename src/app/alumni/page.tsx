@@ -96,20 +96,64 @@ const page = () => {
 
       <section className="alumni_portal_section">
         <div className="alumni_portal_container">
-<AlumniLogin/>
+          <AlumniLogin />
         </div>
       </section>
 
       <section className=" wrapper_section">
-            <div className="product_achievement_container">
-            <div>
-              celebrate success
-            </div>
+        <div className="product_achievement_container">
+          <div className="achievement_side">
+            <h1>Celebrating Success</h1>
+            <p>Achievements of Our Products</p>
 
-            <div>
-              state
+            <p>
+              Over the years, YES India Foundation has earned recognition for
+              its innovative programs and exceptional results. From academic
+              awards to cultural accolades, our students and institutions have
+              consistently been honored for their achievements. These successes
+              reflect the hard work, talent and dedication of the entire YES
+              India community.
+            </p>
+          </div>
+
+  <div className="state_ranks_side">
+            <h2>State Level Ranks</h2>
+            <div className="ranks_grid">
+              <div className="rank_card">
+                <div className="rank_placeholder"></div>
+                <p className="rank_name">Salma Aga</p>
+              </div>
+              <div className="rank_card">
+                <div className="rank_placeholder"></div>
+                <p className="rank_name">Maryam Sahiba</p>
+              </div>
+              <div className="rank_card">
+                <div className="rank_placeholder"></div>
+                <p className="rank_name">Sabha Majeed</p>
+              </div>
+              <div className="rank_card">
+                <div className="rank_placeholder"></div>
+                <p className="rank_name">Mohd Fazaan</p>
+              </div>
+              <div className="rank_card">
+                <div className="rank_placeholder"></div>
+                <p className="rank_name">Noor Fathima</p>
+              </div>
+              <div className="rank_card">
+                <div className="rank_placeholder"></div>
+                <p className="rank_name">Nusrat Fathima</p>
+              </div>
+              <div className="rank_card">
+                <div className="rank_placeholder"></div>
+                <p className="rank_name">Shaista Fathima</p>
+              </div>
+              <div className="rank_card">
+                <div className="rank_placeholder"></div>
+                <p className="rank_name">Malika Mushtaq</p>
+              </div>
             </div>
-            </div>
+          </div>
+        </div>
       </section>
     </>
   );

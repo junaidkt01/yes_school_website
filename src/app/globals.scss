@@ -8,6 +8,8 @@
 @use "../styles/gallery" as gallery;
 @use "../styles/alumni" as alumni;
 @use "../styles/charity" as charity;
+@use "../styles/contact" as contact;
+@use "../styles/feedback" as feedback;
 
 /* 2. Old @import (if you still need them) */
 @use "../styles/Footer" as footer; // ideally also migrate to @use

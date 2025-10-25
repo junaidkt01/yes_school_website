@@ -2,7 +2,7 @@ import HomeBanner from "@/components/layout/HomeBanner";
 import StatCard from "@/components/ui/StatCard";
 import FoundersMessage from "@/components/layout/FoundersMessage";
 import ExploreTeam from "@/components/layout/ExploreTeam";
-import CardGrid from "@/components/ui/CardGrid";
+import InstituteType from "@/components/layout/InstituteType";
 
 export default async function Home() {
   return (
@@ -110,7 +110,7 @@ export default async function Home() {
       </div>
 
       <FoundersMessage />
-      <CardGrid />
+   <InstituteType/>
       <ExploreTeam />
     </main>
   );
