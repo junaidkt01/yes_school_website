@@ -1,26 +1,10 @@
-import CardGrid from "@/components/ui/CardGrid";
-import Carousal from "@/components/ui/Carousal";
+
 import { IndiaMap } from "@/components/ui/IndiaMap";
-import MarqueeCarousal from "@/components/ui/MarqueeCarousal";
 import Image from "next/image";
+import Link from "next/link";
 
 const about = () => {
 
-
-  const institutions = [
-    {
-      title: "Yaseen English School",
-      image: "/yaseen-school.png", // Update with your actual image path
-    },
-    {
-      title: "YES India Public School",
-      image: "/yes-public-school.png",
-    },
-    {
-      title: "EC Yes Pre-life Schools",
-      image: "/ec-yes-prelife.png",
-    },
-  ];
 
   return (
     <>
@@ -71,12 +55,12 @@ const about = () => {
         </div>
       </section>
 
-      <section className="about_carousal_section">
+      {/* <section className="about_carousal_section">
         <MarqueeCarousal />
         <div className="carousal_container"></div>
         <Carousal />
         <CardGrid />
-      </section>
+      </section> */}
 
       <section className="milestone_section wrapper_section">
         <div>
@@ -99,30 +83,72 @@ const about = () => {
         </div>
       </section>
 
-      <section className="institutions_types_container">
-        <div className="institutions_types_wrapper">
-          <h1 className="institutions_heading">
-            Types of YES <br /> Institutions
-          </h1>
 
-          <div className="institutes_lists_wrapper">
-            {institutions.map((institution, index) => (
-              <div key={index} className="institution_card">
-                <div className="institution_image_wrapper">
-                  <Image
-                    src={institution.image}
-                    alt={institution.title}
-                    width={400}
-                    height={300}
-                    className="institution_image"
-                  />
-                </div>
-                <p>{institution.title}</p>
+      <section className="wrapper_section">
+        <div className="voice_of_praise_container">
+          <div className="voice_of_praise_header">
+            <h1>Voices of Praise:</h1>
+            <p>Feedback from Noted Personalities</p>
+          </div>
+
+          <div className="voice_card">
+            <p className="voice_text">
+              Our locality, Jammu and Kashmir is a challenging hilly region,
+              where reaching to remote communities is difficult. Economically
+              and educationally, these areas remain underdeveloped. So, here
+              comes the importance of organizations which can satisfy the needs
+              of people. YES India Foundation is one of such organizations which
+              proved very successful in our region. I have seen for the last 15
+              years, they have made successful interventions in the system here
+              as I have been invited in many programs as guest in the title, the
+              principal and professor of Degree College Poonch. So, their main
+              focus is to remain on the dimension of creating scientific
+              temperament among younger generation and contribute towards the
+              promotion of different culture and civilizations here. My opinion
+              about this organization is that it has done a wonderful job in
+              this challenging area.
+            </p>
+
+            <div className="voice_profile">
+              <div className="profile_img"></div>
+              <div className="profile_info">
+                <h5>Prof. Seyd Musarath Hussain Shah</h5>
+                <p>Principal Govt. Degree College Mandi</p>
               </div>
-            ))}
+            </div>
+          </div>
+
+          <div className="voice_see_more">
+            <div className="avatars">
+              <Image
+                src="/feedback/avatar_1.jpg"
+                alt="avatar"
+                width={35}
+                height={35}
+                className="avatar"
+              />
+              <Image
+              src="/feedback/avatar_2.jpg"
+                alt="avatar"
+                width={35}
+                height={35}
+                className="avatar"
+              />
+              <Image
+       src="/feedback/avatar_3.jpg"
+                alt="avatar"
+                width={35}
+                height={35}
+                className="avatar"
+              />
+              <span className="more_count">5+</span>
+            </div>
+           <Link href={"/feedback"}>
+            <button className="see_more_btn">See more</button>
+           </Link>
           </div>
         </div>
-      </section>
+        </section>
 
       {/* States of Operation Section */}
       <section className="wrapper_section">
@@ -141,7 +167,6 @@ const about = () => {
           </div>
         </div>
       </section>
-
 
       <section className="administrative_section wrapper_section">
         <div className="administrative_container">
@@ -199,6 +224,3 @@ const about = () => {
 };
 
 export default about;
-
-
-

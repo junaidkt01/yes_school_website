@@ -1,0 +1,229 @@
+// .wrapper_section {
+//   width: 100%;
+// }
+
+.feedback_banner_container {
+  position: relative;
+  height: calc(100dvh - 78px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0px;
+  // justify-content: center;
+
+
+  .feedback_image_wrapper {
+  z-index: 1;
+
+
+  img{
+    width: 100%;
+
+      max-height: 500px;
+  }
+}
+
+  .feedback_content {
+  position: absolute;
+  z-index: 3;
+  text-align: center;
+  color: var(--white);
+  max-width: 800px;
+  padding: 0 20px;
+top: 70%;
+bottom: 30%;
+
+.quote_icon {
+//   margin: 0 auto 20px;
+  
+  svg {
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+  }
+}
+
+h1{
+  font-weight: 700;
+  color: var(--primary-color);
+line-height: 45px;
+  
+  // @media (max-width: 768px) {
+  //   font-size: 2.5rem;
+  // }
+  
+  // @media (max-width: 480px) {
+  //   font-size: 2rem;
+  // }
+}
+
+p{
+ color: #a5874c;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 25px;
+        letter-spacing: 0%;
+
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
+}
+}
+
+}
+
+
+// .feedback_section {
+//   background: #f8f8fc;
+//   padding: 4rem 0;
+
+//   .feedback_list_container {
+//     display: grid;
+//     grid-template-columns: repeat(2, 1fr);
+//     gap: 2.5rem;
+//     max-width: 1200px;
+//     margin: 0 auto;
+//     padding: 0 1rem;
+
+//     @media (max-width: 992px) {
+//       grid-template-columns: 1fr;
+//     }
+
+//     .feedback_card {
+//       background: #fff;
+//       border-radius: 1.5rem;
+//       box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+//       padding: 2rem;
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: space-between;
+//       transition: all 0.3s ease;
+
+//       &:hover {
+//         box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.1);
+//         transform: translateY(-4px);
+//       }
+
+//       p {
+//         font-size: 0.95rem;
+//         line-height: 1.7;
+//         color: #444;
+//         margin-bottom: 2rem;
+//         text-align: justify;
+//       }
+
+//       .feedback_author {
+//         border-top: 1px solid #eee;
+//         padding-top: 1.2rem;
+
+//         h4 {
+//           color: #2a1b63;
+//           font-size: 1rem;
+//           font-weight: 600;
+//           margin-bottom: 0.25rem;
+//         }
+
+//         span {
+//           color: #666;
+//           font-size: 0.9rem;
+//         }
+//       }
+//     }
+//   }
+// }
+
+
+// feedback.scss
+
+.feedback_list_container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px 120px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  gap: 20px;
+  align-items: start;
+}
+
+.feedback_card {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 28px 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+/* Top Left - Tallest card */
+.feedback_card.card_1 {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  height: fit-content;
+  min-height: 500px;
+}
+
+/* Top Right - Medium height */
+.feedback_card.card_2 {
+  grid-column: 2;
+  grid-row: 1;
+  height: fit-content;
+  min-height: 300px;
+}
+
+/* Bottom Right - Shorter card (add this to your JSX) */
+.feedback_card.card_3 {
+  grid-column: 2;
+  grid-row: 2;
+  height: fit-content;
+  min-height: 200px;
+}
+
+.feedback_text {
+  font-size: 13.5px;
+  line-height: 1.8;
+  color: #2c2c2c;
+  text-align: justify;
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+
+.feedback_author {
+  margin-top: auto;
+  padding-top: 20px;
+
+}
+
+.author_name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 6px;
+}
+
+.author_title {
+  font-size: 13px;
+  color: #666666;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .feedback_list_container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .feedback_card.card_1,
+  .feedback_card.card_2,
+  .feedback_card.card_3 {
+    grid-column: 1;
+    grid-row: auto;
+    min-height: auto;
+  }
+}

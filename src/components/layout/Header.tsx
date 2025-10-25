@@ -50,7 +50,9 @@ const Header = () => {
       </nav>
 
       <div className="button_container">
-        <button>Contact Us</button>
+         <Link href="/contact">
+          <button>Contact Us</button>
+        </Link>
       </div>
 
       <div className="d-lg-none mobile_toggle" onClick={toggleMenu}>

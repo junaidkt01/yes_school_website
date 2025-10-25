@@ -1,0 +1,419 @@
+.contact_page {
+  height: calc(100dvh - 78px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  //   padding: 4rem 1rem;
+  padding: 2rem 0rem;
+@media (max-width:768px) {
+      height: 100%;
+}
+  .contact_header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+
+    h2 {
+      color: var(--primary-color);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: var(--paragraph-color);
+      a {
+        color: var(--paragraph-color);
+        text-decoration: none;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .contact_card {
+    background: var(--white);
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 760px;
+    padding: 50px;
+
+    h3 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    .contact_form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 0.9rem 1rem;
+        border: 1px solid #cfcecc;
+        color: #cfcecc;
+        border-radius: 15px;
+        font-size: 0.95rem;
+        // outline: none;
+        transition: all 0.2s ease;
+
+        &:focus {
+          border-color: #2a1b63;
+          box-shadow: 0 0 0 3px rgba(42, 27, 99, 0.1);
+        }
+      }
+
+      textarea {
+        resize: none;
+      }
+
+      button {
+        background-color: var(--primary-color);
+        color: var(--white);
+        padding: 0.9rem;
+        border: none;
+        border-radius: 15px;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.3s ease;
+
+        &:hover {
+          background-color: var(--primary-color);
+        }
+      }
+    }
+  }
+}
+
+.map_locations_container {
+  margin: 80px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+// justify-self: center;
+  gap: 25px;
+
+  .map_bg_wrapper {
+        // max-width: 440px;
+    position: relative;
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .map_background {
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+      }
+    }
+
+    .location_details {
+      position: absolute;
+      padding: 0px 30px;
+      bottom: 20px;
+      left: 0;
+      width: 100%;
+      border-radius: 15px;
+      overflow: hidden;
+      text-align: center;
+
+      // Top purple title bar
+      > div:first-child {
+        background-color: var(--primary-color);
+        color: var(--white);
+        padding: 10px 0;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+
+        h6 {
+          font-size: 14px;
+          font-weight: 600;
+          margin: 0;
+        }
+      }
+
+      // White bottom address section
+      .location_address {
+        background: #ffffff;
+        padding: 15px 20px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+
+        p {
+          font-size: 14px;
+          color: #2a1b63;
+          line-height: 1.4;
+          margin: 0;
+        }
+
+        p:first-child {
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+
+// Contact Section Styles
+
+// .contact_section {
+//   padding: 80px 0;
+//   background: #f9fafb;
+
+//   .container {
+//     max-width: 1280px;
+//     margin: 0 auto;
+//     padding: 0 16px;
+//   }
+
+//   .section_title {
+//     font-size: 2.25rem;
+//     font-weight: 700;
+//     text-align: center;
+//     margin-bottom: 64px;
+//     color: #1f2937;
+//   }
+// }
+
+// .map_locations_container {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+//   gap: 32px;
+//   max-width: 1000px;
+//   margin: 0 auto;
+
+//   @media (min-width: 768px) {
+//     grid-template-columns: repeat(2, 1fr);
+//   }
+
+//   .map_bg_wrapper {
+//     position: relative;
+//     transition: transform 0.3s ease;
+
+//     &:hover {
+//       transform: translateY(-5px);
+//     }
+
+//     .map_background {
+//       position: relative;
+//       height: 320px;
+//       background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #172554 100%);
+//       border-radius: 16px;
+//       overflow: hidden;
+//       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+//                   0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+//       .map_overlay {
+//         position: absolute;
+//         inset: 0;
+//         opacity: 0.3;
+
+//         .map_svg {
+//           width: 100%;
+//           height: 100%;
+//         }
+//       }
+
+//       // Location Markers
+//       .location_marker {
+//         position: absolute;
+
+//         &.marker_1 {
+//           top: 33%;
+//           right: 33%;
+//           transform: translateX(50%);
+//         }
+
+//         &.marker_2 {
+//           top: 50%;
+//           left: 50%;
+//           transform: translateX(-50%);
+//         }
+
+//         .marker_ping {
+//           position: absolute;
+//           width: 12px;
+//           height: 12px;
+//           background: #60a5fa;
+//           border-radius: 50%;
+//           animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+//         }
+
+//         .marker_dot {
+//           position: relative;
+//           width: 12px;
+//           height: 12px;
+//           background: #3b82f6;
+//           border-radius: 50%;
+//         }
+//       }
+
+//       // Main Pin
+//       .main_pin {
+//         position: absolute;
+//         top: 50%;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+
+//         .pin_shadow {
+//           position: absolute;
+//           bottom: -4px;
+//           left: 50%;
+//           transform: translateX(-50%);
+//           width: 32px;
+//           height: 8px;
+//           background: rgba(0, 0, 0, 0.2);
+//           filter: blur(8px);
+//           border-radius: 50%;
+//         }
+
+//         .pin_svg {
+//           filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+//           animation: bounce 2s ease-in-out infinite;
+//         }
+//       }
+
+//       // Corner Icons
+//       .corner_icons {
+//         position: absolute;
+//         top: 16px;
+//         right: 16px;
+//         display: flex;
+//         flex-direction: column;
+//         gap: 8px;
+
+//         .icon_circle {
+//           width: 32px;
+//           height: 32px;
+//           background: rgba(255, 255, 255, 0.2);
+//           backdrop-filter: blur(8px);
+//           border-radius: 50%;
+//           display: flex;
+//           align-items: center;
+//           justify-content: center;
+
+//           .icon_inner {
+//             width: 16px;
+//             height: 16px;
+//             border: 2px solid white;
+//             border-radius: 50%;
+//           }
+//         }
+//       }
+//     }
+
+//     // Location Details Card
+//     .location_details {
+//       position: absolute;
+//       bottom: 12px;
+//       left: 12px;
+//       right: 12px;
+//       background: #ffffff;
+//       border-radius: 8px;
+//       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+//                   0 10px 10px -5px rgba(0, 0, 0, 0.04);
+//       padding: 20px;
+
+//       .location_title {
+//         font-size: 1.125rem;
+//         font-weight: 700;
+//         color: #1f2937;
+//         margin-bottom: 8px;
+//       }
+
+//       .location_address {
+//         font-size: 0.875rem;
+//         color: #4b5563;
+//         line-height: 1.4;
+
+//         p {
+//           margin: 2px 0;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// Animations
+@keyframes ping {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .contact_section {
+    padding: 60px 0;
+
+    .section_title {
+      font-size: 1.875rem;
+      margin-bottom: 48px;
+    }
+  }
+
+  .map_locations_container {
+    .map_bg_wrapper {
+      .map_background {
+        height: 280px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .contact_section {
+    padding: 40px 0;
+
+    .section_title {
+      font-size: 1.5rem;
+      margin-bottom: 32px;
+    }
+  }
+
+  .map_locations_container {
+    gap: 24px;
+
+    .map_bg_wrapper {
+      .location_details {
+        padding: 16px;
+
+        .location_title {
+          font-size: 1rem;
+        }
+
+        .location_address {
+          font-size: 0.8125rem;
+        }
+      }
+    }
+  }
+}
