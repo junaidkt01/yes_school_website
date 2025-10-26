@@ -1,17 +1,9 @@
-// components/GalleryCarousel.tsx
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  Navigation,
-  Pagination,
-  Autoplay,
-  EffectCoverflow,
-} from "swiper/modules";
-
+import { Navigation, Autoplay, EffectCoverflow } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 
 import Image from "next/image";
@@ -23,56 +15,88 @@ const GalleryCarousel = () => {
   const nextRef = useRef<HTMLButtonElement>(null);
 
   const images = [
-    { id: 1, src: "/carousal/gallery/carousal_1.png", alt: "Colorful clothing" },
+    {
+      id: 1,
+      src: "/carousal/gallery/carousal_1.png",
+      alt: "Colorful clothing",
+    },
     { id: 2, src: "/carousal/gallery/carousal_2.png", alt: "Book in library" },
-    { id: 3, src: "/carousal/gallery/carousal_3.png", alt: "Writing workspace" },
+    {
+      id: 3,
+      src: "/carousal/gallery/carousal_3.png",
+      alt: "Writing workspace",
+    },
+    {
+      id: 4,
+      src: "/carousal/gallery/carousal_6.png",
+      alt: "Writing workspace",
+    },
+        {
+      id: 5,
+      src: "/gallery/yes_care5.jpg",
+      alt: "Writing workspace",
+    },
+            {
+      id: 6,
+      src: "/gallery/yes_care6.jpg",
+      alt: "Writing workspace",
+    },
+            {
+      id: 7,
+      src: "/gallery/yes_care7.jpg",
+      alt: "Writing workspace",
+    },
+            {
+      id: 8,
+      src: "/gallery/yes_care8.jpg",
+      alt: "Writing workspace",
+    },
+
+  //     "",
+  // "/gallery/yes_care6.jpg",
+  // "/gallery/yes_care7.jpg",
   ];
 
   return (
     <div className="gallery_wrapper">
-     <Swiper
-  modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
-  effect="coverflow"
-  grabCursor={true}
-  centeredSlides={true}
-  slidesPerView={3}
-  loop={true}
-  autoplay={{
-    delay: 2500,
-    disableOnInteraction: false,
-  }}
-  coverflowEffect={{
-    rotate: 0,
-    stretch: 0,
-    depth: 200,
-    modifier: 1.5,
-    slideShadows: false,
-  }}
-  pagination={{
-    clickable: true,
-    el: ".custom-pagination",
-  }}
-  navigation={{
-    prevEl: prevRef.current,
-    nextEl: nextRef.current,
-  }}
-  // ✅ Replace this block here
-  onBeforeInit={(swiper) => {
-    if (
-      swiper.params.navigation &&
-      typeof swiper.params.navigation !== "boolean"
-    ) {
-      swiper.params.navigation.prevEl = prevRef.current;
-      swiper.params.navigation.nextEl = nextRef.current;
-    }
-  }}
-  breakpoints={{
-    320: { slidesPerView: 1.2, spaceBetween: 16 },
-    768: { slidesPerView: 2, spaceBetween: 24 },
-    1080: { slidesPerView: 3, spaceBetween: 32 },
-  }}
-  className="premium_swiper"
->
+      <Swiper
+        modules={[Navigation, Autoplay, EffectCoverflow]}
+        effect="coverflow"
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={3}
+        loop={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        coverflowEffect={{
+          rotate: 0,
+          stretch: 0,
+          depth: 200,
+          modifier: 1.5,
+          slideShadows: false,
+        }}
+        navigation={{
+          prevEl: prevRef.current,
+          nextEl: nextRef.current,
+        }}
+        onBeforeInit={(swiper) => {
+          if (
+            swiper.params.navigation &&
+            typeof swiper.params.navigation !== "boolean"
+          ) {
+            swiper.params.navigation.prevEl = prevRef.current;
+            swiper.params.navigation.nextEl = nextRef.current;
+          }
+        }}
+        breakpoints={{
+          320: { slidesPerView: 1.2, spaceBetween: 16 },
+          768: { slidesPerView: 2, spaceBetween: 24 },
+          1080: { slidesPerView: 3, spaceBetween: 32 },
+        }}
+        className="premium_swiper"
+      >
         {images.map((item) => (
           <SwiperSlide key={item.id}>
             <div className="gallery_slide">
@@ -93,13 +117,14 @@ const GalleryCarousel = () => {
         <button ref={prevRef} className="bottom_nav_btn" aria-label="Previous">
           <ChevronLeft size={22} />
         </button>
-        <button ref={nextRef} className="bottom_nav_btn active" aria-label="Next">
+        <button
+          ref={nextRef}
+          className="bottom_nav_btn active"
+          aria-label="Next"
+        >
           <ChevronRight size={22} />
         </button>
       </div>
-
-      {/* Pagination */}
-      <div className="custom-pagination"></div>
     </div>
   );
 };

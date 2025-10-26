@@ -10,6 +10,9 @@
 @use "../styles/charity" as charity;
 @use "../styles/contact" as contact;
 @use "../styles/feedback" as feedback;
+@use "../styles/gpp" as gpp;
+
+
 
 /* 2. Old @import (if you still need them) */
 @use "../styles/Footer" as footer; // ideally also migrate to @use

@@ -223,16 +223,19 @@
 
 .administrative_container {
   display: flex;
-  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 40px 20px;
   align-items: center;
-  gap: 100px;
-  padding: 40px 60px 80px 60px;
 
-  .administrative_contents {
+  .left_column {
+    flex: 1;
+    
     display: flex;
     flex-direction: column;
-    gap: 32px;
-    flex: 1;
+    align-items: center;
+    gap: 24px;
 
     h2 {
       color: #2a1b63;
@@ -246,8 +249,9 @@
     }
   }
 
-  .administrative_positions_wrapper {
-    flex: 2;
+
+  .right_column {
+    flex: 1;
     display: flex;
     flex-direction: column;
     max-width: 320px;
@@ -302,7 +306,79 @@
       }
     }
   }
+
+  
 }
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .administrative_container {
+    gap: 32px;
+    padding: 30px 20px;
+  }
+
+  .administrative_container .left_column h2 {
+    font-size: 28px;
+  }
+
+  .administrative_container .right_column {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .administrative_container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 30px 16px;
+  }
+
+  .administrative_container .left_column {
+    text-align: center;
+    align-items: center;
+  }
+
+  .administrative_container .left_column h2 {
+    font-size: 26px;
+  }
+
+  .administrative_container .left_column p {
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: justify;
+  }
+
+  .administrative_container .right_column {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .administrative_container {
+    padding: 20px 12px;
+    gap: 24px;
+  }
+
+  .administrative_container .left_column h2 {
+    font-size: 22px;
+  }
+
+  .administrative_container .right_column {
+    font-size: 13px;
+  }
+
+  .administrative_container .right_column .position,
+  .administrative_container .right_column .sub-item,
+  .administrative_container .right_column .group-title {
+    padding: 8px 10px;
+  }
+}
+
+
+
+
 
 .state_operation_section {
   margin: 80px 0px;
