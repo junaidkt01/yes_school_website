@@ -41,7 +41,7 @@ const StateCard = ({ state }: { state: StateData }) => {
             <h2>{state.name}</h2>
           </div>
 
-          <div className="state_academy">
+          {/* <div className="state_academy">
             <Image
               src={state.bannerImage}
               alt={`${state.name} banner`}
@@ -49,7 +49,7 @@ const StateCard = ({ state }: { state: StateData }) => {
               height={237}
               priority
             />
-          </div>
+          </div> */}
         </div>
 
         {/* ACCESS TO EDUCATION */}

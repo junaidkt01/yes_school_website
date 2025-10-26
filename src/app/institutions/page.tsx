@@ -63,7 +63,7 @@ const Page = () => {
                   {/* Play Button Overlay */}
                   <button
                     className="video_play_button"
-                    onClick={() => handleVideoClick("https://google.com")}
+                   onClick={() => campus.url && handleVideoClick(campus.url)}
                     aria-label={`Play video for ${campus.location}`}
                   >
                     <PlayCircle size={64} className="play_icon" />
