@@ -1,20 +1,20 @@
 export const institutions = [
     {
-      title: "RAZA UL ULOOM ISLAMIA HSS",
-      image: "/institutions/Ruihss_campus.jpeg",
+      title: "Yaseen English School",
+      image: "/yaseen-school.png",
     },
     {
       title: "YES India Public School",
-      image: "/institutions/Ruihss_campus.jpeg",
+      image: "/yes-public-school.png",
     },
     {
       title: "EC Yes Pre-life Schools",
-      image: "/institutions/Ruihss_campus.jpeg",
+      image: "/ec-yes-prelife.png",
     },
 
         {
       title: "EC Yes Pre-life Schools",
-      image: "/institutions/Ruihss_campus.jpeg",
+      image: "/ec-yes-prelife.png",
     },
     
   ];
