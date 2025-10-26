@@ -11,7 +11,7 @@ const Footer = () => {
     { href: "/academic", label: "Academic" },
     { href: "/yesCare", label: "Yes Care" },
     { href: "/gallery", label: "Gallery" },
-     { href: "/gpt", label: "Yes GPP" },
+     { href: "/gpp", label: "Yes GPP" },
     { href: "/alumni", label: "Alumni" },
             { href: "/feedback", label: "Feedback" },
        

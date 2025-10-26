@@ -1,6 +1,8 @@
 //academic//page.tsx//
 "use client";
 
+import MemorableMoments from "@/components/ui/MemorableMoments";
+import { useEffect, useState } from "react";
 import {
   BarChart,
   Bar,
@@ -12,15 +14,39 @@ import {
   ResponsiveContainer,
   LabelList,
 } from "recharts";
+import { motion } from "framer-motion";
 
-const data = [
-  { year: "2024", A: 0.5, B: 0.4, C: 1.6, D: 3.5 },
-  { year: "2030", A: 1, B: 1, C: 10, D: 20 },
-  { year: "2040", A: 40, B: 70, C: 300, D: 500 },
-  { year: "2050", A: 25, B: 100, C: 400, D: 1000 },
-];
+interface SchoolData {
+  year: string;
+  A: number;
+  B: number;
+  C: number;
+  D: number;
+}
 
-const academic = () => {
+
+
+
+const Academic = () => {
+  const [chartData, setChartData] = useState<SchoolData[]>([]);
+
+
+  
+useEffect(() => {
+  const data = [
+    { year: "2024", A: 0.5, B: 0.4, C: 1.6, D: 3.5 },
+    { year: "2030", A: 1, B: 1, C: 10, D: 20 },
+    { year: "2040", A: 40, B: 70, C: 300, D: 500 },
+    { year: "2050", A: 25, B: 100, C: 400, D: 1000 },
+  ];
+
+  const timer = setTimeout(() => {
+    setChartData(data);
+  }, 100);
+
+  return () => clearTimeout(timer);
+}, []);
+
   return (
     <>
       <section className="academic_banner_container">
@@ -45,7 +71,6 @@ const academic = () => {
 
         {/* ====== Heading Section ====== */}
         <div className="banner_content">
-
           <h1>
             Diverse Learning Paths: <br />
             Types & Grades of <span>YES INDIA</span> Institutes
@@ -190,62 +215,93 @@ const academic = () => {
             <p>Number of schools in different grades for coming years</p>
           </div>
 
-          <div className="chart_container">
-            <ResponsiveContainer width="100%" height={400}>
-<BarChart
-  data={data}
-  margin={{ top: 40, right: 30, left: 0, bottom: 10 }}
->
-    {/* Grid Lines */}
-    <CartesianGrid strokeDasharray="0" className="custom-grid" />
+         {/* Right Chart Section with Framer Motion */}
+        <motion.div
+          className="chart_container"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <ResponsiveContainer width="100%" height={400}>
+            <BarChart
+              data={chartData}
+              margin={{ top: 40, right: 30, left: 0, bottom: 10 }}
+            >
+              {/* Grid Lines */}
+              <CartesianGrid strokeDasharray="0" className="custom-grid" />
 
-    {/* X & Y Axis */}
-    <XAxis dataKey="year" tick={{ fill: "#000000" }} />
-    <YAxis
-      tick={{ fill: "#000000" }}
-      domain={[0, 1000]}
-      tickCount={6}
-      tickFormatter={(value) => (value === 0 ? "0" : `${value}`)}
-    />
+              {/* X & Y Axis */}
+              <XAxis dataKey="year" tick={{ fill: "#000000" }} />
+              <YAxis
+                tick={{ fill: "#000000" }}
+                domain={[0, 1000]}
+                tickCount={6}
+                tickFormatter={(value) => (value === 0 ? "0" : `${value}`)}
+              />
 
-    {/* Tooltip */}
-    <Tooltip
-      contentStyle={{
-        background: "#fff",
-        borderRadius: "8px",
-        border: "1px solid #ddd",
-      }}
-    />
+              {/* Tooltip */}
+              <Tooltip
+                contentStyle={{
+                  background: "#fff",
+                  borderRadius: "8px",
+                  border: "1px solid #ddd",
+                }}
+              />
 
-    {/* Legend */}
-    <Legend
-      verticalAlign="bottom"
-      align="center"
-      wrapperStyle={{
-        paddingTop: 20,
-        color: "#000000", // this affects text color in most browsers
-      }}
-    />
+              {/* Legend */}
+              <Legend
+                verticalAlign="bottom"
+                align="center"
+                wrapperStyle={{ paddingTop: 20, color: "#000000" }}
+              />
 
-    {/* Bars */}
-    <Bar dataKey="A" fill="#FEE3C5" barSize={22}>
-      <LabelList dataKey="A" position="top" fill="#000000" fontSize={12} />
-    </Bar>
+              {/* Bars with animation */}
+              <Bar
+                dataKey="A"
+                fill="#FEE3C5"
+                barSize={22}
+                isAnimationActive={true}
+                animationDuration={1500}
+                animationEasing="ease-out"
+              >
+                <LabelList dataKey="A" position="top" fill="#000" fontSize={12} />
+              </Bar>
 
-    <Bar dataKey="B" fill="#C9FF85" barSize={22}>
-      <LabelList dataKey="B" position="top" fill="#000000" fontSize={12} />
-    </Bar>
+              <Bar
+                dataKey="B"
+                fill="#C9FF85"
+                barSize={22}
+                isAnimationActive={true}
+                animationDuration={1500}
+                animationEasing="ease-out"
+              >
+                <LabelList dataKey="B" position="top" fill="#000" fontSize={12} />
+              </Bar>
 
-    <Bar dataKey="C" fill="#F7FF85" barSize={22}>
-      <LabelList dataKey="C" position="top" fill="#000000" fontSize={12} />
-    </Bar>
+              <Bar
+                dataKey="C"
+                fill="#F7FF85"
+                barSize={22}
+                isAnimationActive={true}
+                animationDuration={1500}
+                animationEasing="ease-out"
+              >
+                <LabelList dataKey="C" position="top" fill="#000" fontSize={12} />
+              </Bar>
 
-    <Bar dataKey="D" fill="#85D0FF" barSize={22}>
-      <LabelList dataKey="D" position="top" fill="#000000" fontSize={12} />
-    </Bar>
-  </BarChart>
-</ResponsiveContainer>
-          </div>
+              <Bar
+                dataKey="D"
+                fill="#85D0FF"
+                barSize={22}
+                isAnimationActive={true}
+                animationDuration={1500}
+                animationEasing="ease-out"
+              >
+                <LabelList dataKey="D" position="top" fill="#000" fontSize={12} />
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
+        </motion.div>
         </div>
       </section>
       <section className="wrapper_section">
@@ -267,123 +323,347 @@ const academic = () => {
       </section>
 
       <section className="wrapper_section">
-        <div className="memorable_moments_section">
-         <h2>Memorable Moments of  <br /> <span>YES INDIA Foundation</span></h2>
- 
+        <MemorableMoments/>
+        {/* <div className="memorable_moments_section">
+          <h2>
+            Memorable Moments of <br /> <span>YES INDIA Foundation</span>
+          </h2>
 
-<div className="bg-lines" style={{width:"100%"}}>
-  <svg width="1123" height="1201" viewBox="0 0 1123 1201" fill="none" xmlns="http://www.w3.org/2000/svg">
-<line y1="225.5" x2="1122" y2="225.5" stroke="url(#paint0_linear_775_973)"/>
-<line y1="750.5" x2="1122" y2="750.5" stroke="url(#paint1_linear_775_973)"/>
-<line y1="375.5" x2="1122" y2="375.5" stroke="url(#paint2_linear_775_973)"/>
-<line y1="900.5" x2="1122" y2="900.5" stroke="url(#paint3_linear_775_973)"/>
-<line y1="75.5" x2="1122" y2="75.5" stroke="url(#paint4_linear_775_973)"/>
-<line y1="600.5" x2="1122" y2="600.5" stroke="url(#paint5_linear_775_973)"/>
-<line x1="0.5" y1="1125.5" x2="1122.5" y2="1125.5" stroke="url(#paint6_linear_775_973)"/>
-<line y1="450.5" x2="1122" y2="450.5" stroke="url(#paint7_linear_775_973)"/>
-<line y1="975.5" x2="1122" y2="975.5" stroke="url(#paint8_linear_775_973)"/>
-<line y1="150.5" x2="1122" y2="150.5" stroke="url(#paint9_linear_775_973)"/>
-<line y1="675.5" x2="1122" y2="675.5" stroke="url(#paint10_linear_775_973)"/>
-<line x1="0.5" y1="1200.5" x2="1122.5" y2="1200.5" stroke="url(#paint11_linear_775_973)"/>
-<line y1="300.5" x2="1122" y2="300.5" stroke="url(#paint12_linear_775_973)"/>
-<line y1="825.5" x2="1122" y2="825.5" stroke="url(#paint13_linear_775_973)"/>
-<line y1="0.5" x2="1122" y2="0.5" stroke="url(#paint14_linear_775_973)"/>
-<line y1="525.5" x2="1122" y2="525.5" stroke="url(#paint15_linear_775_973)"/>
-<line x1="0.5" y1="1050.5" x2="1122.5" y2="1050.5" stroke="url(#paint16_linear_775_973)"/>
-<defs>
-<linearGradient id="paint0_linear_775_973" x1="24.3421" y1="226" x2="1035.39" y2="226" gradientUnits="userSpaceOnUse">
-<stop stopColor="white"/>
-<stop offset="0.497873" stopColor="#727272"/>
-<stop offset="1" stopColor="white"/>
-</linearGradient>
-<linearGradient id="paint1_linear_775_973" x1="24.3421" y1="751" x2="1035.39" y2="751" gradientUnits="userSpaceOnUse">
-<stop stopColor="white"/>
-<stop offset="0.497873" stopColor="#727272"/>
-<stop offset="1" stopColor="white"/>
-</linearGradient>
-<linearGradient id="paint2_linear_775_973" x1="24.3421" y1="376" x2="1035.39" y2="376" gradientUnits="userSpaceOnUse">
-<stop stopColor="white"/>
-<stop offset="0.497873" stopColor="#727272"/>
-<stop offset="1" stopColor="white"/>
-</linearGradient>
-<linearGradient id="paint3_linear_775_973" x1="24.3421" y1="901" x2="1035.39" y2="901" gradientUnits="userSpaceOnUse">
-<stop stopColor="white"/>
-<stop offset="0.497873" stopColor="#727272"/>
-<stop offset="1" stopColor="white"/>
-</linearGradient>
-<linearGradient id="paint4_linear_775_973" x1="24.3421" y1="76" x2="1035.39" y2="76" gradientUnits="userSpaceOnUse">
-<stop stopColor="white"/>
-<stop offset="0.497873" stopColor="#727272"/>
-<stop offset="1" stopColor="white"/>
-</linearGradient>
-<linearGradient id="paint5_linear_775_973" x1="24.3421" y1="601" x2="1035.39" y2="601" gradientUnits="userSpaceOnUse">
-<stop stopColor="white"/>
-<stop offset="0.497873" stopColor="#727272"/>
-<stop offset="1" stopColor="white"/>
-</linearGradient>
-<linearGradient id="paint6_linear_775_973" x1="24.8421" y1="1126" x2="1035.89" y2="1126" gradientUnits="userSpaceOnUse">
-<stop stopColor="white"/>
-<stop offset="0.497873" stopColor="#727272"/>
-<stop offset="1" stopColor="white"/>
-</linearGradient>
-<linearGradient id="paint7_linear_775_973" x1="24.3421" y1="451" x2="1035.39" y2="451" gradientUnits="userSpaceOnUse">
-<stop stopColor="white"/>
-<stop offset="0.497873" stopColor="#727272"/>
-<stop offset="1" stopColor="white"/>
-</linearGradient>
-<linearGradient id="paint8_linear_775_973" x1="24.3421" y1="976" x2="1035.39" y2="976" gradientUnits="userSpaceOnUse">
-<stop stopColor="white"/>
-<stop offset="0.497873" stopColor="#727272"/>
-<stop offset="1" stopColor="white"/>
-</linearGradient>
-<linearGradient id="paint9_linear_775_973" x1="24.3421" y1="151" x2="1035.39" y2="151" gradientUnits="userSpaceOnUse">
-<stop stopColor="white"/>
-<stop offset="0.497873" stopColor="#727272"/>
-<stop offset="1" stopColor="white"/>
-</linearGradient>
-<linearGradient id="paint10_linear_775_973" x1="24.3421" y1="676" x2="1035.39" y2="676" gradientUnits="userSpaceOnUse">
-<stop stopColor="white"/>
-<stop offset="0.497873" stopColor="#727272"/>
-<stop offset="1" stopColor="white"/>
-</linearGradient>
-<linearGradient id="paint11_linear_775_973" x1="24.8421" y1="1201" x2="1035.89" y2="1201" gradientUnits="userSpaceOnUse">
-<stop stopColor="white"/>
-<stop offset="0.497873" stopColor="#727272"/>
-<stop offset="1" stopColor="white"/>
-</linearGradient>
-<linearGradient id="paint12_linear_775_973" x1="24.3421" y1="301" x2="1035.39" y2="301" gradientUnits="userSpaceOnUse">
-<stop stopColor="white"/>
-<stop offset="0.497873" stopColor="#727272"/>
-<stop offset="1" stopColor="white"/>
-</linearGradient>
-<linearGradient id="paint13_linear_775_973" x1="24.3421" y1="826" x2="1035.39" y2="826" gradientUnits="userSpaceOnUse">
-<stop stopColor="white"/>
-<stop offset="0.497873" stopColor="#727272"/>
-<stop offset="1" stopColor="white"/>
-</linearGradient>
-<linearGradient id="paint14_linear_775_973" x1="24.3421" y1="1" x2="1035.39" y2="1" gradientUnits="userSpaceOnUse">
-<stop stopColor="white"/>
-<stop offset="0.497873" stopColor="#727272"/>
-<stop offset="1" stopColor="white"/>
-</linearGradient>
-<linearGradient id="paint15_linear_775_973" x1="24.3421" y1="526" x2="1035.39" y2="526" gradientUnits="userSpaceOnUse">
-<stop stopColor="white"/>
-<stop offset="0.497873" stopColor="#727272"/>
-<stop offset="1" stopColor="white"/>
-</linearGradient>
-<linearGradient id="paint16_linear_775_973" x1="24.8421" y1="1051" x2="1035.89" y2="1051" gradientUnits="userSpaceOnUse">
-<stop stopColor="white"/>
-<stop offset="0.497873" stopColor="#727272"/>
-<stop offset="1" stopColor="white"/>
-</linearGradient>
-</defs>
-</svg>
-</div>
-         
-        </div>
+          <div className="bg-lines" style={{ width: "100%" }}>
+            <svg
+              width="1123"
+              height="1201"
+              viewBox="0 0 1123 1201"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                y1="225.5"
+                x2="1122"
+                y2="225.5"
+                stroke="url(#paint0_linear_775_973)"
+              />
+              <line
+                y1="750.5"
+                x2="1122"
+                y2="750.5"
+                stroke="url(#paint1_linear_775_973)"
+              />
+              <line
+                y1="375.5"
+                x2="1122"
+                y2="375.5"
+                stroke="url(#paint2_linear_775_973)"
+              />
+              <line
+                y1="900.5"
+                x2="1122"
+                y2="900.5"
+                stroke="url(#paint3_linear_775_973)"
+              />
+              <line
+                y1="75.5"
+                x2="1122"
+                y2="75.5"
+                stroke="url(#paint4_linear_775_973)"
+              />
+              <line
+                y1="600.5"
+                x2="1122"
+                y2="600.5"
+                stroke="url(#paint5_linear_775_973)"
+              />
+              <line
+                x1="0.5"
+                y1="1125.5"
+                x2="1122.5"
+                y2="1125.5"
+                stroke="url(#paint6_linear_775_973)"
+              />
+              <line
+                y1="450.5"
+                x2="1122"
+                y2="450.5"
+                stroke="url(#paint7_linear_775_973)"
+              />
+              <line
+                y1="975.5"
+                x2="1122"
+                y2="975.5"
+                stroke="url(#paint8_linear_775_973)"
+              />
+              <line
+                y1="150.5"
+                x2="1122"
+                y2="150.5"
+                stroke="url(#paint9_linear_775_973)"
+              />
+              <line
+                y1="675.5"
+                x2="1122"
+                y2="675.5"
+                stroke="url(#paint10_linear_775_973)"
+              />
+              <line
+                x1="0.5"
+                y1="1200.5"
+                x2="1122.5"
+                y2="1200.5"
+                stroke="url(#paint11_linear_775_973)"
+              />
+              <line
+                y1="300.5"
+                x2="1122"
+                y2="300.5"
+                stroke="url(#paint12_linear_775_973)"
+              />
+              <line
+                y1="825.5"
+                x2="1122"
+                y2="825.5"
+                stroke="url(#paint13_linear_775_973)"
+              />
+              <line
+                y1="0.5"
+                x2="1122"
+                y2="0.5"
+                stroke="url(#paint14_linear_775_973)"
+              />
+              <line
+                y1="525.5"
+                x2="1122"
+                y2="525.5"
+                stroke="url(#paint15_linear_775_973)"
+              />
+              <line
+                x1="0.5"
+                y1="1050.5"
+                x2="1122.5"
+                y2="1050.5"
+                stroke="url(#paint16_linear_775_973)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_775_973"
+                  x1="24.3421"
+                  y1="226"
+                  x2="1035.39"
+                  y2="226"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="white" />
+                  <stop offset="0.497873" stopColor="#727272" />
+                  <stop offset="1" stopColor="white" />
+                </linearGradient>
+                <linearGradient
+                  id="paint1_linear_775_973"
+                  x1="24.3421"
+                  y1="751"
+                  x2="1035.39"
+                  y2="751"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="white" />
+                  <stop offset="0.497873" stopColor="#727272" />
+                  <stop offset="1" stopColor="white" />
+                </linearGradient>
+                <linearGradient
+                  id="paint2_linear_775_973"
+                  x1="24.3421"
+                  y1="376"
+                  x2="1035.39"
+                  y2="376"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="white" />
+                  <stop offset="0.497873" stopColor="#727272" />
+                  <stop offset="1" stopColor="white" />
+                </linearGradient>
+                <linearGradient
+                  id="paint3_linear_775_973"
+                  x1="24.3421"
+                  y1="901"
+                  x2="1035.39"
+                  y2="901"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="white" />
+                  <stop offset="0.497873" stopColor="#727272" />
+                  <stop offset="1" stopColor="white" />
+                </linearGradient>
+                <linearGradient
+                  id="paint4_linear_775_973"
+                  x1="24.3421"
+                  y1="76"
+                  x2="1035.39"
+                  y2="76"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="white" />
+                  <stop offset="0.497873" stopColor="#727272" />
+                  <stop offset="1" stopColor="white" />
+                </linearGradient>
+                <linearGradient
+                  id="paint5_linear_775_973"
+                  x1="24.3421"
+                  y1="601"
+                  x2="1035.39"
+                  y2="601"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="white" />
+                  <stop offset="0.497873" stopColor="#727272" />
+                  <stop offset="1" stopColor="white" />
+                </linearGradient>
+                <linearGradient
+                  id="paint6_linear_775_973"
+                  x1="24.8421"
+                  y1="1126"
+                  x2="1035.89"
+                  y2="1126"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="white" />
+                  <stop offset="0.497873" stopColor="#727272" />
+                  <stop offset="1" stopColor="white" />
+                </linearGradient>
+                <linearGradient
+                  id="paint7_linear_775_973"
+                  x1="24.3421"
+                  y1="451"
+                  x2="1035.39"
+                  y2="451"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="white" />
+                  <stop offset="0.497873" stopColor="#727272" />
+                  <stop offset="1" stopColor="white" />
+                </linearGradient>
+                <linearGradient
+                  id="paint8_linear_775_973"
+                  x1="24.3421"
+                  y1="976"
+                  x2="1035.39"
+                  y2="976"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="white" />
+                  <stop offset="0.497873" stopColor="#727272" />
+                  <stop offset="1" stopColor="white" />
+                </linearGradient>
+                <linearGradient
+                  id="paint9_linear_775_973"
+                  x1="24.3421"
+                  y1="151"
+                  x2="1035.39"
+                  y2="151"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="white" />
+                  <stop offset="0.497873" stopColor="#727272" />
+                  <stop offset="1" stopColor="white" />
+                </linearGradient>
+                <linearGradient
+                  id="paint10_linear_775_973"
+                  x1="24.3421"
+                  y1="676"
+                  x2="1035.39"
+                  y2="676"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="white" />
+                  <stop offset="0.497873" stopColor="#727272" />
+                  <stop offset="1" stopColor="white" />
+                </linearGradient>
+                <linearGradient
+                  id="paint11_linear_775_973"
+                  x1="24.8421"
+                  y1="1201"
+                  x2="1035.89"
+                  y2="1201"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="white" />
+                  <stop offset="0.497873" stopColor="#727272" />
+                  <stop offset="1" stopColor="white" />
+                </linearGradient>
+                <linearGradient
+                  id="paint12_linear_775_973"
+                  x1="24.3421"
+                  y1="301"
+                  x2="1035.39"
+                  y2="301"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="white" />
+                  <stop offset="0.497873" stopColor="#727272" />
+                  <stop offset="1" stopColor="white" />
+                </linearGradient>
+                <linearGradient
+                  id="paint13_linear_775_973"
+                  x1="24.3421"
+                  y1="826"
+                  x2="1035.39"
+                  y2="826"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="white" />
+                  <stop offset="0.497873" stopColor="#727272" />
+                  <stop offset="1" stopColor="white" />
+                </linearGradient>
+                <linearGradient
+                  id="paint14_linear_775_973"
+                  x1="24.3421"
+                  y1="1"
+                  x2="1035.39"
+                  y2="1"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="white" />
+                  <stop offset="0.497873" stopColor="#727272" />
+                  <stop offset="1" stopColor="white" />
+                </linearGradient>
+                <linearGradient
+                  id="paint15_linear_775_973"
+                  x1="24.3421"
+                  y1="526"
+                  x2="1035.39"
+                  y2="526"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="white" />
+                  <stop offset="0.497873" stopColor="#727272" />
+                  <stop offset="1" stopColor="white" />
+                </linearGradient>
+                <linearGradient
+                  id="paint16_linear_775_973"
+                  x1="24.8421"
+                  y1="1051"
+                  x2="1035.89"
+                  y2="1051"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="white" />
+                  <stop offset="0.497873" stopColor="#727272" />
+                  <stop offset="1" stopColor="white" />
+                </linearGradient>
+              </defs>
+            </svg>
+
+            <div className="memorable_moments_container">
+              <div>
+                <Image src={"/pin.png"} alt="" width={40} height={40}/>
+              </div>
+
+                <div>
+                <Image src={"/academic/memorable_moment1.png"} alt="" width={210} height={270}/>
+              </div>
+            </div>
+          </div>
+        </div> */}
       </section>
     </>
   );
 };
 
-export default academic;
+export default Academic;

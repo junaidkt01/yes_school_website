@@ -1,0 +1,665 @@
+.gpp_banner_container {
+  position: relative;
+  height: calc(100dvh - 78px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0px;
+  // justify-content: center;
+
+  .feedback_image_wrapper {
+    z-index: 1;
+
+    img {
+      width: 100%;
+
+      max-height: 600px;
+    }
+  }
+
+  
+
+  .feedback_content {
+    position: absolute;
+        background: rgba(0, 0, 0, .6);
+    z-index: 2;
+    text-align: center;
+    color: var(--white);
+    max-width: 800px;
+    padding: 0 20px;
+    top: 50%;
+    bottom: 50%;
+
+    h1 {
+      font-weight: 700;
+      color: var(--white);
+      line-height: 45px;
+
+      // @media (max-width: 768px) {
+      //   font-size: 2.5rem;
+      // }
+
+      // @media (max-width: 480px) {
+      //   font-size: 2rem;
+      // }
+    }
+  }
+}
+
+.gpp_contents {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+
+  .intro_text {
+    max-width: 900px;
+    text-align: justify;
+    color: var(--paragraph-color);
+
+  }
+}
+
+// Buds & Blooms Section
+.buds_bloom_container {
+  display: flex;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 40px 20px;
+  border-bottom: 1px solid #727272;
+  align-items: center;
+
+  // Left Column - Logo and Description
+  .left_column {
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // gap: 24px;
+
+    .logo_wrapper {
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #000000;
+
+      text-align: justify;
+    }
+  }
+
+  // Right Column - Frequency Cards
+  .right_column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    .frequency_card {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      h3 {
+        font-family: var(--font-funnel-display);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin: 0;
+      }
+
+      .title {
+        font-family: var(--font-funnel-display);
+        font-size: 12px;
+        font-weight: 600;
+        color: #000000;
+        margin: 0;
+      }
+
+      .content {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #000000;
+        font-weight: 100;
+        margin: 0;
+        text-align: justify;
+      }
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: 968px) {
+    flex-direction: column;
+    gap: 40px;
+
+    .left_column {
+      flex: 1;
+      max-width: 100%;
+    }
+
+    .right_column {
+      flex: 1;
+    }
+  }
+
+  @media (max-width: 640px) {
+    padding: 30px 15px;
+    gap: 30px;
+
+    .left_column {
+      .logo_wrapper {
+        text-align: center;
+      }
+    }
+
+    .right_column {
+      gap: 24px;
+
+      .frequency_card {
+        .frequency {
+          font-size: 18px;
+        }
+
+        .title {
+          font-size: 15px;
+        }
+
+        .content {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+
+// rainbow_classroom Section
+// rainbow_classroom Section
+.rainbow_classroom_container {
+  display: flex;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 40px 20px;
+  border-bottom: 1px solid #727272;
+  align-items: center;
+
+  .left_column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    .logo_wrapper {
+      // The Image component will handle the sizing
+      img {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+    }
+  }
+
+  .right_column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .table_wrapper {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .rainbow_table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      thead {
+        .table_header {
+          font-family: var(--font-funnel-display);
+          background-color: var(--primary-color);
+          color: var(--white);
+          padding: 12px;
+          font-size: 16px;
+          font-weight: 600;
+          text-align: center;
+          letter-spacing: 0.5px;
+          border-top-left-radius: 15px;
+          border-top-right-radius: 15px;
+        }
+
+        .table_subheader {
+          background-color: var(--white);
+          color: #333;
+          padding: 10px;
+          font-size: 14px;
+          font-weight: 700;
+          text-align: center;
+          border-bottom: 2px solid #e0e0e0;
+        }
+      }
+
+      tbody {
+        tr {
+          border-bottom: 1px solid #e0e0e0;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          td {
+            padding: 12px 16px;
+            font-size: 14px;
+            color: #333;
+
+            &.code_cell {
+              text-align: center;
+              font-weight: 600;
+              width: 50%;
+              background-color: #f8f9fa;
+              border-right: 1px solid #e0e0e0;
+            }
+          }
+        }
+      }
+    }
+  }
+  // Responsive design
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 40px;
+    padding: 30px 20px;
+
+    .left_column,
+    .right_column {
+    }
+
+    .left_column .logo_wrapper img {
+      max-width: 250px;
+    }
+  }
+}
+
+// planets_classroom Section
+
+.planets_school_container {
+  display: flex;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 40px 20px;
+  align-items: center;
+
+  @media (max-width: 968px) {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .left_column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    // max-width: 450px;
+
+    .logo_wrapper {
+      img {
+        width: 100%;
+        height: auto;
+        max-width: 220px;
+      }
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #333;
+      margin: 0;
+      text-align: justify;
+    }
+  }
+
+  .right_column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .parliament_section {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 400px;
+
+      .numbers_display {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        padding: 20px 0;
+
+        h2 {
+          font-size: 91px;
+        }
+        span {
+          font-size: 12;
+          font-weight: 100;
+        }
+      }
+
+      .parliament_info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 20px 0;
+
+        h3 {
+          font-size: 15px;
+          font-weight: 700;
+          color: var(--primary-color);
+          letter-spacing: 0.5px;
+        }
+
+        .election_info {
+          display: flex;
+
+          align-items: center;
+          p {
+            font-size: 12px;
+          }
+          span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+          }
+        }
+
+        .description {
+          text-align: center;
+          font-size: 14px;
+          line-height: 1.6;
+          color: #333;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+// skill_bench Section
+.skill_bench_container {
+  display: flex;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 40px 20px;
+  align-items: center;
+  border-bottom: 1px solid #727272;
+
+  @media (max-width: 968px) {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .left_column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    // max-width: 450px;
+
+    h3 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #ff0b0b; // Red color for SKILL BENCH title
+      margin: 0 0 16px 0;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #000000;
+      text-align: justify;
+      margin: 0;
+    }
+  }
+
+  // Right Column - Frequency Cards
+  .right_column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    .frequency_card {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      h3 {
+        font-family: var(--font-funnel-display);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin: 0;
+      }
+
+      .title {
+        font-family: var(--font-funnel-display);
+        font-size: 12px;
+        font-weight: 600;
+        color: #000000;
+        margin: 0;
+      }
+
+      .content {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #000000;
+        font-weight: 100;
+        margin: 0;
+        text-align: justify;
+      }
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: 968px) {
+    flex-direction: column;
+    gap: 40px;
+
+    .left_column {
+      flex: 1;
+      max-width: 100%;
+    }
+
+    .right_column {
+      flex: 1;
+    }
+  }
+}
+
+// yes_genius Section
+.yes_genius_container {
+  display: flex;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 40px 20px;
+  align-items: center;
+  border-bottom: 1px solid #727272;
+
+  .left_column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    // max-width: 450px;
+
+    .frequency_card {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      h3 {
+        font-family: var(--font-funnel-display);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin: 0;
+      }
+
+      .content {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #000000;
+        font-weight: 100;
+        margin: 0;
+        text-align: justify;
+      }
+    }
+  }
+
+  .right_column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    .frequency_card {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      h3 {
+        font-family: var(--font-funnel-display);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin: 0;
+      }
+
+      .content {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #000000;
+        font-weight: 100;
+        margin: 0;
+        text-align: justify;
+      }
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: 968px) {
+    flex-direction: column;
+    gap: 40px;
+
+    .left_column {
+      flex: 1;
+      max-width: 100%;
+    }
+
+    .right_column {
+      flex: 1;
+    }
+  }
+}
+
+.awards_container {
+  display: flex;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 40px 20px;
+  align-items: center;
+
+
+  .left_column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    h3 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #ff0b0b; // Red color for SKILL BENCH title
+      margin: 0 0 16px 0;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #000000;
+      text-align: justify;
+      margin: 0;
+    }
+  }
+
+  .right_column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+gap: 10px;
+    .frequency_card {
+      display: flex;
+      flex-direction: column;
+
+      h3 {
+        font-family: var(--font-funnel-display);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin: 0;
+      }
+
+      .content {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #000000;
+        font-weight: 100;
+        margin: 0;
+        text-align: justify;
+      }
+    }
+  }
+
+   // Responsive Design
+  @media (max-width: 968px) {
+    flex-direction: column;
+    gap: 40px;
+
+    .left_column {
+      flex: 1;
+      max-width: 100%;
+    }
+
+    .right_column {
+      flex: 1;
+    }
+  }
+}

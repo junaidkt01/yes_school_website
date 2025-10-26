@@ -2,14 +2,14 @@
 
 export const yesInfoCardData = [{
     image: '/carousal/kids_img.png',
-    title: 'Educational',
+    title: 'The Inspiring Journey of YES India Foundation',
     backgroundColor: '#FEE3C5',
     arrowColor: '#FFFFFF',
  link: '/educational',
 },
 {
      image: '/carousal/card_img2.png',
-    title: 'Spiritual',
+    title: 'Milestones of Growth: Yearly Progress Since 2007',
     backgroundColor: '#C9FF85',
    arrowColor: '#FFFFFF',
     link: '/yes-india-foundation'
@@ -17,7 +17,7 @@ export const yesInfoCardData = [{
 
 {
      image: '/carousal/card_img3.png',
-    title: 'Humane',
+    title: 'YES India State of Operations: Expanding Horizons',
     backgroundColor: '#F7FF85',
    arrowColor: '#FFFFFF',
     link: '/humane'

@@ -1,5 +1,6 @@
 
 import { IndiaMap } from "@/components/ui/IndiaMap";
+import MarqueeCarousal from "@/components/ui/MarqueeCarousal";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -55,12 +56,7 @@ const about = () => {
         </div>
       </section>
 
-      {/* <section className="about_carousal_section">
-        <MarqueeCarousal />
-        <div className="carousal_container"></div>
-        <Carousal />
-        <CardGrid />
-      </section> */}
+ 
 
       <section className="milestone_section wrapper_section">
         <div>
@@ -81,6 +77,11 @@ const about = () => {
             to a brighter, more educated future, to the tailored goal.
           </p>
         </div>
+      </section>
+
+            <section className="about_carousal_section">
+        <MarqueeCarousal />
+      
       </section>
 
 
@@ -170,10 +171,7 @@ const about = () => {
 
       <section className="administrative_section wrapper_section">
         <div className="administrative_container">
-          <div className="administrative_contents">
-            <div
-              style={{ height: "446px", width: "593px", background: "#D9D9D9" }}
-            ></div>
+          <div className="left_column">
             <div>
               <h2>
                 The Administrative <br /> Hierarchy
@@ -190,7 +188,7 @@ const about = () => {
             </div>
           </div>
 
-          <div className="administrative_positions_wrapper">
+          <div className="right_column ">
             <div className="position level1">Managing Director</div>
 
             <div className="group">

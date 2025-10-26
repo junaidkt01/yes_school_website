@@ -2,6 +2,7 @@
 "use client";
 
 import GalleryCarousel from "@/components/ui/GalleryCarousel";
+import GalleryGrid from "@/components/ui/GalleryGrid";
 
 
 
@@ -13,7 +14,9 @@ const page = () => {
       </section>
 
       <section className="wrapper_section">
-        <div className="gallery_canvas_container"></div>
+         <div style={{margin:"40px 0px"}}>
+        <GalleryGrid/>
+        </div>
       </section>
     </>
   );
