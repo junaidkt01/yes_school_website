@@ -7,6 +7,10 @@
   // background: linear-gradient(145deg, #f9fafc, #eef1f6);
   // padding: 4rem 1.5rem;
       padding: 40px 48px 20px 48px;
+          @media (max-width:768px) {
+            height: 100%;
+      padding: 0px 16px;
+    }
   .gallery_wrapper {
     position: relative;
     width: 100%;

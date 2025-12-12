@@ -14,7 +14,7 @@ const funnelDisplay = Funnel_Display({
 });
 
 export const metadata: Metadata = {
-  title: "My Website | Fast & SEO Friendly",
+  title: "Yes India Foundation",
   description: "Dynamic website built with Next.js, TypeScript, SCSS, and Tailwind",
   keywords: ["Next.js", "SEO", "Tailwind", "TypeScript"],
   openGraph: {

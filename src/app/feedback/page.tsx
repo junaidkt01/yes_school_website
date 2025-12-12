@@ -27,21 +27,25 @@ const page = () => {
   return (
     <>
       <section className="wrapper_section">
-        <div className="feedback_banner_container">
-          <div className="feedback_image_wrapper">
-            <Image
-              src={"/feedback/feedback_banner_bg.png"}
-              alt="feedback_bg"
-              width={1100}
-              height={600}
-              priority
-            />
-          </div>
 
-          {/* Content overlay */}
-          <div className="feedback_content">
-            <div className="quote_icon">
-              <svg
+        <div className="feedback_banner_container">
+  <div className="feedback_image_wrapper">
+    <Image
+      src="/feedback/feedback_banner_bg.png"
+      alt="feedback_bg"
+      fill
+      className="feedback_image"
+      priority
+    />
+
+    {/* Black Overlay */}
+    <div className="feedback_overlay"></div>
+  </div>
+
+  {/* Content overlay */}
+  <div className="feedback_content">
+    <div className="quote_icon">
+  <svg
                 width="100"
                 height="100"
                 viewBox="0 0 217 155"
@@ -53,11 +57,11 @@ const page = () => {
                   fill="#2A1B63"
                 />
               </svg>
-            </div>
-            <h1>Voices of Praise:</h1>
-            <p>Feedback from Noted Personalities</p>
-          </div>
-        </div>
+    </div>
+    <h1>Voices of Praise:</h1>
+    <p>Feedback from Noted Personalities</p>
+  </div>
+</div>
       </section>
 
       {/* <section className="wrapper_section feedback_section">

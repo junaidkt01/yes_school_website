@@ -4,6 +4,9 @@ import { statesData } from "@/utils/statesData";
 import Image from "next/image";
 
 const page = () => {
+
+  console.log("stateeeeee", statesData.map((state) => state.name));
+  
   return (
     <>
         <section className="wrapper_section">
@@ -84,6 +87,7 @@ const page = () => {
           <section className="wrapper_section">
       <div className="state_project_container">
         {statesData.map((state, index) => (
+
           <StateCard key={index} state={state} />
         ))}
       </div>

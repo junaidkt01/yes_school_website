@@ -10,10 +10,12 @@ export default function Page() {
             <Image
               src={"/feedback/feedback_banner_bg.png"}
               alt="gpp_bg"
-              width={1100}
-              height={600}
+        fill
+                  className="feedback_image"
               priority
             />
+
+ <div className="feedback_overlay"></div>
           </div>
 
           {/* Content overlay */}

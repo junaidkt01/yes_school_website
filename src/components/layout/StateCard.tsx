@@ -23,7 +23,7 @@ interface StateData {
 // Fix: Accept a single `state` object prop
 const StateCard = ({ state }: { state: StateData }) => {
   return (
-    <div className="state_demographics_wrapper">
+    <div className="state_demographics_wrapper" id={state.name.replace(/\s+/g, "")}>
       {/* LEFT COLUMN */}
       <div className="demographics_left">
         <div className="state_map_container">

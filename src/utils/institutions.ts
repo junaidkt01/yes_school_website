@@ -1,20 +1,20 @@
 export const institutions = [
     {
       title: "Yaseen English School",
-      image: "/yaseen-school.png",
+      image: "/institutions/yaseen_english_school.jpg",
     },
     {
       title: "YES India Public School",
-      image: "/yes-public-school.png",
+      image: "/home_bg_banner1.png",
     },
     {
-      title: "EC Yes Pre-life Schools",
-      image: "/ec-yes-prelife.png",
+      title: "Yes Hasan Fatima English School",
+      image: "/institutions/hasan_fatima_school.jpg",
     },
 
-        {
-      title: "EC Yes Pre-life Schools",
-      image: "/ec-yes-prelife.png",
-    },
+    //     {
+    //   title: "EC Yes Pre-life Schools",
+    //   image: "/ec-yes-prelife.png",
+    // },
     
   ];

@@ -5,6 +5,10 @@
   display: flex;
   justify-content: center;
         padding: 40px 48px 20px 48px;
+
+            @media (max-width:768px) {
+      padding: 0px 16px;
+    }
   .state_banner_image {
     width: 100%;
     height: 100%;
@@ -107,6 +111,7 @@ background: var(--YES-Brown, #A5874C);
 // }
 
 .state_project_container {
+
       display: flex;
     flex-direction: column;
     width: 100%;
@@ -335,8 +340,7 @@ background: var(--YES-Brown, #A5874C);
 // Responsive Design
 @media (max-width: 768px) {
   .state_project_container {
-    padding: 16px;
-
+    
     .state_demographics_wrapper {
       gap: 16px;
     }
@@ -373,33 +377,83 @@ background: var(--YES-Brown, #A5874C);
   }
 }
 
+// ======================================
+// Mobile Styles (Max-Width: 480px)
+// ======================================
 @media (max-width: 480px) {
   .state_project_container {
-    padding: 12px;
+    // 1. Remove padding from the outer flex parent to avoid calculation errors
+    padding: 0; 
+    width: 100%;
+    overflow-x: hidden; // Prevent horizontal scroll
 
     .state_demographics_wrapper {
-      gap: 12px;
+      // 2. APPLY PADDING HERE instead
+      // This ensures the content pushes in, regardless of the parent
+      padding: 40px 0px; 
+      
+      // 3. Force the wrapper to stay within the screen
+      width: 100%; 
+      max-width: 100vw;
+      box-sizing: border-box; // Critical: Includes padding in width calculation
+      
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin: 0;
     }
 
-    .state_map_container .map_placeholder {
-      height: 120px;
+    // Fix the column widths inside
+    .demographics_left,
+    .demographics_right {
+      width: 100%;
+      gap: 20px;
     }
 
+    // Map Section adjustments
+    .state_map_container {
+      padding: 16px;
+      
+      .map_placeholder {
+        height: 160px;
+        margin-bottom: 16px;
+      }
+      
+      .state_label {
+        padding: 12px;
+        h2 { font-size: 18px; }
+      }
+    }
+
+    // Table adjustments
     .access_education_table,
     .demographics_table,
     .educational_facilities_table {
+      width: 100%;
+      
       .table_header,
       .section_header {
-        padding: 8px 12px;
+        padding: 10px 14px;
+        
+        h3, p { font-size: 13px; }
       }
 
       table {
+        width: 100%;
+        table-layout: fixed; // Prevents table from exploding width
         font-size: 12px;
 
         tbody {
           tr {
             td {
-              padding: 8px 10px;
+              padding: 10px 10px; // Tighter cell padding
+              vertical-align: top;
+              word-wrap: break-word; // Wrap long text
+
+              &:first-child {
+                width: 45%; 
+                padding-right: 8px;
+              }
             }
           }
         }

@@ -1,18 +1,17 @@
 // header_section
+
 .header_section {
   z-index: 99;
-  padding: 50px 186px;
+  padding: 50px 70px;
   height: 78px;
-  background-color: #ffffff;
-
+  background-color: hsl(0, 0%, 100%);
   position: sticky;
   top: 0;
-
   display: flex;
   align-items: center;
 
   @media (max-width: 1199px) {
-    height: 54px;
+    height: 64px; // Slightly taller for better touch targets
     padding: 0px 20px;
     display: flex;
     justify-content: space-between;
@@ -29,6 +28,11 @@
       list-style-type: none;
       gap: 35px;
 
+      // Hide mobile contact button on desktop
+      .mobile_contact_li {
+        display: none;
+      }
+
       li {
         .nav_link {
           position: relative;
@@ -36,11 +40,10 @@
           font-weight: 400;
           font-size: 16px;
           line-height: 100%;
-          letter-spacing: 0%;
           color: #000000;
           text-decoration: none;
 
-          @media (max-width:1080px) {
+          @media (max-width: 1080px) {
             color: #ffffff;
           }
         }
@@ -51,12 +54,12 @@
           bottom: -6px;
           width: 0%;
           height: 2px;
-          background-color: #2a1b63; /* same as button color */
+          background-color: #2a1b63;
           transition: width 0.3s ease-in-out;
           border-radius: 2px;
 
           @media (max-width: 1080px) {
-               background-color: #ffffff;
+            background-color: #ffffff;
           }
         }
         .nav_link:hover::after {
@@ -65,7 +68,7 @@
         .nav_link.active {
           color: #2a1b63;
           font-weight: 500;
-          @media (max-width:1080px) {
+          @media (max-width: 1080px) {
             color: #ffffff;
           }
         }
@@ -86,57 +89,159 @@
       border: none;
       font-weight: 400;
       font-size: 16px;
+      cursor: pointer;
       text-wrap: nowrap;
-      line-height: 100%;
-      letter-spacing: 0%;
     }
   }
 
-/* --- Mobile Navigation --- */
-@media (max-width: 1199px) {
-  nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 40%;
-    padding: 30px 0px ;
-    background-color:  #2a1b63;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: right 0.4s ease-in-out;
-    z-index: 98;
+  /* --- Mobile Navigation & Premium Animation --- */
+  @media (max-width: 1199px) {
+    nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      // Use 100vh for full height premium feel
+      height: 100vh; 
+      // Ensure min-width for readability on small screens
+      width: 60%; 
+      min-width: 280px;
+      max-width: 400px;
+      
+      padding: 80px 40px 40px; // Add top padding to clear the toggle button
+      background-color: #2a1b63;
+      box-shadow: -5px 0 25px rgba(0,0,0,0.2); // Add depth
+      flex-direction: column;
+      justify-content: flex-start; // Align top
+      align-items: flex-start; // Align left text
+      transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1); // Premium easing
+      z-index: 98;
 
-    a {
-      color: #ffffff;
+      a {
+        color: #ffffff;
+      }
+    }
+
+    nav.open {
+      right: 0;
+    }
+
+    nav .navlinks {
+      flex-direction: column;
+      gap: 30px;
+      width: 100%;
+
+      // Show mobile contact button here
+      .mobile_contact_li {
+        display: block;
+        margin-top: 20px;
+        
+        .mobile_contact_btn {
+          width: 100%;
+          background-color: #ffffff;
+          color: #2a1b63;
+          padding: 14px 0;
+          border-radius: 8px;
+          border: none;
+          font-weight: 600;
+          font-size: 16px;
+          cursor: pointer;
+          transition: transform 0.2s;
+          
+          &:active {
+            transform: scale(0.98);
+          }
+        }
+      }
+
+      // Staggered Link Animation
+      li {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+      }
+    }
+
+    // Trigger animation when nav is open
+    nav.open .navlinks li {
+      opacity: 1;
+      transform: translateY(0);
+      // Calculate delay based on index for cascade effect
+      transition-delay: calc(0.1s + var(--i) * 0.05s);
+    }
+
+    nav .logo {
+      display: none;
+    }
+
+    .button_container {
+      display: none !important;
+    }
+
+    /* --- Premium Toggle Button (Hamburger to X) --- */
+/* --- Premium Toggle Button (SVG Version) --- */
+.mobile_toggle {
+  z-index: 100;
+  cursor: pointer;
+  // width: 48px; // Touch target size
+  // height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  // Wrapper to hold absolute positioned SVGs relative to center
+  .icon_wrapper {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    
+    .svg_icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      // Smooth premium transition
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    }
+
+    /* --- Default State (Menu Closed) --- */
+    .hamburger {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+
+    .close {
+      opacity: 0;
+      // Start slightly rotated and smaller for the "pop in" effect
+      transform: scale(0.5) rotate(-90deg);
     }
   }
 
-  nav.open {
-    right: 0;
-  }
+  /* --- Active State (Menu Open) --- */
+  &.active {
+    .icon_wrapper {
+      .hamburger {
+        opacity: 0;
+        // Rotate out and shrink
+        transform: scale(0.5) rotate(90deg);
+      }
 
-  nav .navlinks {
-    flex-direction: column;
-    gap: 25px;
-  }
-
-  nav .logo {
-    display: none;
-  }
-
-  .button_container {
-    display: none !important;
-  }
-
-  .mobile_toggle {
-    z-index: 99;
-    cursor: pointer;
+      .close {
+        opacity: 1;
+        // Rotate in to neutral
+        transform: scale(1) rotate(0deg);
+      }
+    }
   }
 }
+  }
 }
 
-
+.home_page{
+ @media (max-width:768px) {
+  padding: 20px 0px;
+ }
+}
 
  .home_banner {
   position: relative;
@@ -145,7 +250,7 @@
 
   @media (max-width: 768px) {
     height: 100%;
-    padding: 0 24px;
+    padding: 0 16px;
   }
 
   .home_banner_content {
@@ -157,8 +262,8 @@
 
   .banner_slide {
     position: relative;
-    width: 100%;
-    height: 100%;
+max-width: 1500px;
+    height: 650px;
   }
 
   .banner_slide img {
@@ -210,14 +315,14 @@ color: #ffffff;
   .prev_btn {
     left: 50px;
     @media (max-width:1080px) {
-      left: 24px;
+      left: 16px;
     }
   }
 
   .next_btn {
     right: 50px;
         @media (max-width:1080px) {
-      right: 24px;
+      right: 16px;
     }
   }
 
@@ -288,6 +393,10 @@ display: none;
     background-color: #2a1b63;
     border-radius: 30px;
 
+    @media (max-width:991px) {
+      padding: 24px;
+    }
+
     .mission_vision {
       color: #ffffff;
 
@@ -295,7 +404,11 @@ display: none;
       gap: 13px;
 
       h2 {
+        font-size: 36px;
         color: var(--heading-color);
+        @media (max-width:991px) {
+           font-size: 24px;
+        }
       }
       p {
         color: var(--heading-color);

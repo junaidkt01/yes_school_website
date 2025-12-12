@@ -3,6 +3,7 @@ import { alumniData } from "@/utils/alumniData";
 import React from "react";
 
 const page = () => {
+
   return (
     <>
       <section className="wrapper_section">
@@ -13,7 +14,8 @@ const page = () => {
               YES India Alumni
             </h1>
             <div className="button_contanier">
-              <button>
+              <a style={{textDecoration:"none"}} href="#alumni-grid">
+  <button>
                 {" "}
                 <span>
                   <svg
@@ -57,6 +59,8 @@ const page = () => {
                 </span>{" "}
                 <p>Explore</p>
               </button>
+              </a>
+            
             </div>
             <p>
               The true measure of success for <span>YES India Foundation</span>{" "}
@@ -73,7 +77,7 @@ const page = () => {
       </section>
 
       <section className="wrapper_section">
-        <div className="alumni_grid_section">
+        <div className="alumni_grid_section" id="alumni-grid">
           <div className="alumni_grid">
             {alumniData.map((alumni, index) => (
               <div key={index} className="alumni_card">
