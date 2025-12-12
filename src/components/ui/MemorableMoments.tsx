@@ -16,41 +16,19 @@ const memorableMoments = [
   { title: "Magazine", image: "/academic/memorable_moment10.png" },
 ];
 
-const MemorableMoments = () => {
+export default function MemorableMoments() {
   return (
     <section className="memorable_moments_section">
       <h2>
-        Our <span>Memorable Moments</span>
+        Memorable Moments of <br /><span>YES INDIA Foundation</span>
       </h2>
 
-      <div className="bg-lines">
-        <svg
-          className="lines_svg"
-          viewBox="0 0 1400 1200"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-        >
-          {[...Array(11)].map((_, i) => (
-            <line
-              key={i}
-              x1={i * 130}
-              y1={0}
-              x2={i * 30}
-              y2="1200"
-              stroke="url(#grad)"
-              strokeWidth="1.2"
-            />
-          ))}
-          <defs>
-            <linearGradient id="grad" x1="0" y1="0" x2="1400" y2="0">
-              <stop stopColor="#2a1b63" stopOpacity="0.1" />
-              <stop offset="0.5" stopColor="#6a5acd" stopOpacity="0.25" />
-              <stop offset="1" stopColor="#2a1b63" stopOpacity="0.1" />
-            </linearGradient>
-          </defs>
-        </svg>
+      <div className="moments_wrapper">
+        {/* Centered background lines */}
+              {/* Horizontal Lines Background */}
+        <div className="wall_bg"></div>
 
-        <div className="memorable_moments_container">
+        <div className="moments_grid">
           {memorableMoments.map((item, index) => (
             <div key={index} className={`moment_card card_${index + 1}`}>
               <Image
@@ -60,7 +38,7 @@ const MemorableMoments = () => {
                 height={32}
                 className="pin_icon"
               />
-              <div className="image_wrapper">
+              <div className="image_box">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -75,8 +53,7 @@ const MemorableMoments = () => {
       </div>
     </section>
   );
-};
+}
 
-export default MemorableMoments;
 
 

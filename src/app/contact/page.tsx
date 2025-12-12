@@ -1,129 +1,18 @@
 "use client";
-import Image from "next/image";
-import { useState } from "react";
 
-interface Location {
-  title: string;
-  address: string;
-  city: string;
+
+
+import dynamic from "next/dynamic";
+
+const Contact = dynamic(() => import("./ContactClient"), {
+  ssr: false,
+});
+
+export default function Page() {
+  return <Contact />;
 }
-const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form Submitted:", formData);
-    // TODO: add actual form submission (e.g., email or API)
-  };
-
-  const locations: Location[] = [
-    {
-      title: "Registered Office",
-      address: "RKP - V/720-A12, YES square,",
-      city: "Calicut, Kerala - 673633",
-    },
-    {
-      title: "Administrative Office",
-      address: "A - 18, Ramanujan street,",
-      city: "New Delhi, India - 700078",
-    },
-  ];
-
-  return (
-    <>
-      <section className="contact_page">
-        <div className="contact_header">
-          <h2>Contact Us</h2>
-          <p>
-            <a href="mailto:info@yesindiafoundation.com">
-              info@yesindiafoundation.com
-            </a>{" "}
-            &nbsp; | &nbsp;
-            <a href="tel:+919895662111">+91 989 566 2111</a>
-          </p>
-        </div>
-
-        <div className="contact_card">
-          <h3>Send us a Message</h3>
-          <form onSubmit={handleSubmit} className="contact_form">
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-
-            <textarea
-              name="message"
-              placeholder="Message"
-              rows={5}
-              value={formData.message}
-              onChange={handleChange}
-              required
-            ></textarea>
-
-            <button type="submit">Send Message</button>
-          </form>
-        </div>
-      </section>
-
-      <section className="wrapper_section">
-        <div className="map_locations_container">
-          {locations.map((location, index) => (
-            <div key={index} className="map_bg_wrapper">
-              {/* Map Background */}
-              <div className="map_background">
-                {/* Decorative map elements */}
-                <Image
-                  src={"/map_bg.png"}
-                  width={600}
-                  alt=""
-                  height={440}
-                  priority
-                />
-              </div>
-
-              {/* Location Details Card */}
-              <div className="location_details">
-                <div>
-                  <h6>{location.title}</h6>
-                </div>
-                <div className="location_address">
-                  <p>{location.address}</p>
-                  <p>{location.city}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-    </>
-  );
-};
-
-export default Contact;
 
 // // Contact.tsx
 // "use client";

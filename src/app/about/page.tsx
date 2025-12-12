@@ -1,4 +1,5 @@
 
+import CardGrid from "@/components/ui/CardGrid";
 import { IndiaMap } from "@/components/ui/IndiaMap";
 import MarqueeCarousal from "@/components/ui/MarqueeCarousal";
 import Image from "next/image";
@@ -58,6 +59,16 @@ const about = () => {
 
  
 
+            <section className="about_carousal_section">
+        <MarqueeCarousal />
+      
+      </section>
+
+      <section>
+        <CardGrid/>
+      </section>
+
+      
       <section className="milestone_section wrapper_section">
         <div>
           <h1>
@@ -79,10 +90,6 @@ const about = () => {
         </div>
       </section>
 
-            <section className="about_carousal_section">
-        <MarqueeCarousal />
-      
-      </section>
 
 
       <section className="wrapper_section">
@@ -154,7 +161,7 @@ const about = () => {
       {/* States of Operation Section */}
       <section className="wrapper_section">
         <div className="state_operation_section">
-          <div>
+          <div style={{textAlign:"center"}}>
             <h1>
               YES INDIA States <br /> of Operations:
             </h1>

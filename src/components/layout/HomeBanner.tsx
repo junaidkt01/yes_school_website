@@ -29,37 +29,68 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const HomeBanner = () => {
-  const banners = [
+  const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const desktopBanners  = [
     {
       image: "/home_bg_banner1.png",
-      text: "A Child Without Education is Like a Bird Without Wings",
-    },
-    {
-      image: "/home_bg_banner2.jpg",
       text: "Empowering the Next Generation Through Knowledge",
     },
-    {
-      image: "/home_bg_banner3.jpg",
+        {
+      image: "/carousal/gallery/swiper_desktop2.jpg",
+      text: "A Child Without Education is Like a Bird Without Wings",
+    },
+    // {
+    //   image: "/home_bg_banner3.jpg",
+    //   text: "Education Opens the Door to Freedom and Opportunity",
+    // },
+       {
+      image: "/carousal/gallery/swiper2.jpg",
       text: "Education Opens the Door to Freedom and Opportunity",
     },
-       {
-      image: "/home_bg_banner4.jpg",
+
+
+     
+  ];
+
+  const mobileBanners = [
+      {
+      image: "/carousal/gallery/swipermobile.jpg",
+      text: "Empowering the Next Generation Through Knowledge",
+    },
+
+    {
+      image: "/carousal/gallery/swipermobile2.jpg",
+      text: "Empowering the Next Generation Through Knowledge",
+    },
+        {
+      image: "/carousal/gallery/swipermobile3.jpg",
       text: "Education Opens the Door to Freedom and Opportunity",
     },
   ];
 
+
+   const banners = isMobile ? mobileBanners : desktopBanners;
+
   return (
     <div className="home_banner">
       {/* Navigation buttons */}
-      <div className="banner_nav prev_btn">
+      {/* <div className="banner_nav prev_btn">
         <ChevronLeft size={35} />
       </div>
       <div className="banner_nav next_btn">
         <ChevronRight size={35} />
-      </div>
+      </div> */}
 
       <Swiper
         modules={[Autoplay, EffectFade, Navigation, Pagination]}
@@ -76,14 +107,14 @@ const HomeBanner = () => {
         loop
         className="home_banner_content"
       >
-        {banners.map((banner, index) => (
+           {banners.map((banner, index) => (
           <SwiperSlide key={index}>
             <div className="banner_slide">
               <Image
                 src={banner.image}
                 alt={`banner-${index}`}
-                width={1600}
-                height={750}
+                width={isMobile ? 450 : 1600}
+                height={isMobile ? 750 : 750}
                 priority
               />
               <h1>{banner.text}</h1>

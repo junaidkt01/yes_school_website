@@ -1,7 +1,15 @@
+"use client";
+
 import "@/components/layout/layout.scss";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const ExploreTeam = () => {
+  const router = useRouter();
+
+  const handleNavigate = () => {
+    router.push("/alumni")
+  }
   return (
     <div className="wrapper_section">
       <div className="explore_team_container">
@@ -42,7 +50,7 @@ const ExploreTeam = () => {
             priority
           />
         <div className="explore_btn">
-          <button><p>Explore Our Team</p> <svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <button onClick={handleNavigate}><p>Explore Our Team</p> <svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M26 12L1.5 12M26 12L15.5 22.5M26 12L15.5 1.5" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>
 </button>

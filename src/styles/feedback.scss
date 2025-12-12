@@ -1,199 +1,58 @@
 .feedback_banner_container {
-  position: relative;
-  height: calc(100dvh - 78px);
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 0px;
-  // justify-content: center;
-
-  .feedback_image_wrapper {
-    z-index: 1;
-
-    img {
-      width: 100%;
-      object-fit: contain;
-      max-height: 500px;
-    }
-  }
-
-  .feedback_content {
-    position: absolute;
-    z-index: 3;
-    text-align: center;
-    color: var(--white);
-    max-width: 800px;
-    padding: 0 20px;
-    top: 70%;
-    bottom: 30%;
-
-    .quote_icon {
-      //   margin: 0 auto 20px;
-
-      svg {
-        filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
-      }
-    }
-
-    h1 {
-      font-weight: 700;
-      color: var(--primary-color);
-      line-height: 45px;
-
-      // @media (max-width: 768px) {
-      //   font-size: 2.5rem;
-      // }
-
-      // @media (max-width: 480px) {
-      //   font-size: 2rem;
-      // }
-    }
-
-    p {
-      color: #a5874c;
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 25px;
-      letter-spacing: 0%;
-
-      @media (max-width: 768px) {
-        font-size: 1.25rem;
-      }
-
-      @media (max-width: 480px) {
-        font-size: 1rem;
-      }
-    }
-  }
+  height: calc(100dvh - 78px);
+  padding: 20px 0;
+  position: relative;
 }
 
-// .feedback_section {
-//   background: #f8f8fc;
-//   padding: 4rem 0;
-
-//   .feedback_list_container {
-//     display: grid;
-//     grid-template-columns: repeat(2, 1fr);
-//     gap: 2.5rem;
-//     max-width: 1200px;
-//     margin: 0 auto;
-//     padding: 0 1rem;
-
-//     @media (max-width: 992px) {
-//       grid-template-columns: 1fr;
-//     }
-
-//     .feedback_card {
-//       background: #fff;
-//       border-radius: 1.5rem;
-//       box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
-//       padding: 2rem;
-//       display: flex;
-//       flex-direction: column;
-//       justify-content: space-between;
-//       transition: all 0.3s ease;
-
-//       &:hover {
-//         box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.1);
-//         transform: translateY(-4px);
-//       }
-
-//       p {
-//         font-size: 0.95rem;
-//         line-height: 1.7;
-//         color: #444;
-//         margin-bottom: 2rem;
-//         text-align: justify;
-//       }
-
-//       .feedback_author {
-//         border-top: 1px solid #eee;
-//         padding-top: 1.2rem;
-
-//         h4 {
-//           color: #2a1b63;
-//           font-size: 1rem;
-//           font-weight: 600;
-//           margin-bottom: 0.25rem;
-//         }
-
-//         span {
-//           color: #666;
-//           font-size: 0.9rem;
-//         }
-//       }
-//     }
-//   }
-// }
-
-// feedback.scss
-
-// Feedback Banner Section
-.wrapper_section {
-  width: 100%;
-  padding: 0;
-}
-
-.feedback_banner_container {
+.feedback_image_wrapper {
   position: relative;
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  height: 500px;
+  max-width: 1200px;
+  height: 70vh;
+  border-radius: 20px;  // matches screenshot
   overflow: hidden;
-  border-radius: 24px;
 
-  .feedback_image_wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-
-  .feedback_content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    z-index: 2;
-
-    .quote_icon {
-      margin-bottom: 20px;
-      display: flex;
-      justify-content: center;
-
-      svg {
-        width: 80px;
-        height: 80px;
-        opacity: 0.9;
-      }
-    }
-
-    h1 {
-      font-size: 3.5rem;
-      font-weight: 700;
-      margin: 0 0 10px 0;
-      color: #fff;
-    }
-
-    p {
-      font-size: 1.3rem;
-      font-weight: 400;
-      margin: 0;
-      opacity: 0.95;
-    }
+  .feedback_image {
+    object-fit: cover;
   }
 }
+
+/* Black Overlay */
+.feedback_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45); // perfect smooth dark shade
+  z-index: 2;
+
+  @media (max-width:768px) {
+    background: none;
+  }
+}
+
+/* Content Layer */
+.feedback_content {
+  position: absolute;
+  bottom: 20px;
+  text-align: center;
+  z-index: 3;
+
+  h1 {
+    font-size: 2.2rem;
+    color: #2A1B63;
+  }
+
+  p {
+    color: #AA8F57;
+    margin-top: 8px;
+  }
+}
+
 
 // Feedback Cards Layout
 .feedback_list_container {
@@ -366,6 +225,7 @@
     border-radius: 16px;
 
     .feedback_content {
+      bottom: 0;
       .quote_icon svg {
         width: 60px;
         height: 60px;
@@ -382,7 +242,7 @@
   }
 
   .feedback_list_container {
-    padding: 40px 15px;
+    padding: 40px 0px;
   }
 
   .feedback_card {
@@ -390,6 +250,7 @@
     border-radius: 16px;
 
     .feedback_text {
+      // text-align: start;
       font-size: 0.95rem;
       line-height: 1.7;
     }

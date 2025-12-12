@@ -4,6 +4,10 @@
   overflow: hidden;
   // padding: 0px 48px;
           padding: 40px 48px 20px 48px;
+
+              @media (max-width:768px) {
+      padding: 0px 16px;
+    }
   .institutions_banner_wrapper {
     position: relative;
     height: 100%;
@@ -33,6 +37,9 @@
   }
 }
 
+
+
+
 .institutions_listing_container {
   p {
     padding: 38px 0px;
@@ -50,9 +57,10 @@
       gap: 20px;
     }
 
+    // 🟢 UPDATED: Mobile now uses 2 columns instead of 1
     @media (max-width: 640px) {
-      grid-template-columns: 1fr;
-      gap: 16px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px; // Tighter gap for a sleek look
     }
 
     .campus_card {
@@ -83,14 +91,20 @@
       .campus_image_wrapper {
         position: relative;
         width: 100%;
-        height: 280px;
+        height: 280px; // Desktop Height
         overflow: hidden;
         border-radius: 12px;
         background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
         transition: all 0.3s ease;
 
         @media (max-width: 768px) {
-          height: 240px;
+          height: 240px; // Tablet Height
+        }
+
+        // 🟢 UPDATED: Mobile Height
+        // 200px creates a perfect portrait ratio when width is split 50/50
+        @media (max-width: 640px) {
+          height: 200px; 
         }
 
         .video_play_button {
@@ -106,16 +120,28 @@
           cursor: pointer;
           transition: all 0.4s ease;
 
+          // 🟢 ADDED: Always show play button lightly on touch devices
+          // (Since there is no "hover" on mobile)
+          @media (hover: none) and (pointer: coarse) {
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.1); 
+          }
+
           .play_icon {
             color: white;
             filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.6));
             transition: transform 0.3s ease;
+            
+            // Scale down icon slightly for mobile cards
+            @media (max-width: 640px) {
+               width: 40px;
+               height: 40px;
+            }
           }
 
           &:hover .play_icon {
             transform: scale(1.1);
-            color: #ffd700; // Gold tint for premium look
-            // color:#a5874c;
+            color: #ffd700; 
           }
         }
 
@@ -131,35 +157,67 @@
           transition: transform 0.4s ease;
         }
 
-        .campus_overlay {
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(
-            to top,
-            rgba(0, 0, 0, 0.75) 0%,
-            rgba(0, 0, 0, 0.3) 50%,
-            rgba(0, 0, 0, 0) 100%
-          );
-          display: flex;
-          align-items: flex-end;
-          padding: 20px;
-          transition: background 0.3s ease;
+   .campus_overlay {
+  position: absolute;
+  inset: 0;
+  // Stronger gradient on mobile to ensure text readability on small screens
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.5) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  display: flex;
+  align-items: flex-end; // Anchors text to the bottom
+  padding: 20px;
+  transition: background 0.3s ease;
 
-          .campus_location {
-            color: #ffffff;
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 1.4;
-            margin: 0;
-            text-align: left;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  // 🟢 MOBILE ALIGNMENT FIX
+  @media (max-width: 640px) {
+    // Reduced padding:
+    // 10px bottom (keeps it just above the border-radius curve)
+    // 12px left/right (gives text max width while staying off the edge)
+    padding: 10px 12px;
+    
+    // Ensure gradient covers the text area effectively
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.85) 0%, 
+      rgba(0, 0, 0, 0.3) 60%, 
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
 
-            @media (max-width: 768px) {
-              font-size: 13px;
-              padding-right: 10px;
-            }
-          }
-        }
+  .campus_location {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 0;
+    text-align: left;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    width: 100%; // Ensure it uses full available width
+
+    @media (max-width: 768px) {
+      font-size: 13px;
+      padding-right: 10px;
+    }
+
+    //  MOBILE TEXT REFINEMENT
+    @media (max-width: 640px) {
+      font-size: 12px; // readable but compact
+      line-height: 1.25; // tighter line height for multi-line locations
+      padding-right: 0; // remove extra padding to maximize space
+      font-weight: 600; // slightly bolder to pop against small images
+      
+      // Limit to 2 lines if names are very long
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+}
       }
     }
   }
